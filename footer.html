@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>文档的标题</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="public/css/footer.css" type="text/css" rel="stylesheet">
+</head>
+
+<body style="margin: 0;height: 100%;" class="fot-body">
+    <div id="footer">
+        <ul id="fot-ul" class="fot-ul">
+            <li  class="li1">
+               <a  name="a1" class="a1" href="main.html" target="main">
+                 <img onclick="sel(this)" id="img1" src="public/img/ui/footer/12.png">
+               </a>
+            </li>
+            <li class="li1">
+               <a href="fuli.html" target="main">         
+                 <img onclick="sel(this)" class="img2" src="public/img/ui/footer/21.png">
+              </a>
+            </li>
+            <li  class="li1">
+                 <a href="dingdan.html" target="main">    
+                <img src="public/img/ui/footer/31.png">
+                </a>
+            </li>
+            <li  class="li1">
+            <a href="wode.html" target="main">
+                <img src="public/img/ui/footer/41.png">
+            </a>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+function sel(obj) {
+			var id = document.getElementById("img");
+            var lis2 = document.getElementById("img1");
+			var ul = document.getElementById("ul-o").getElementsByTagName("ul");
+          for (var i = 0; i < lis.length; i++) {
+			if (id != obj) {
+					id[i].src="public/img/ui/footer/"+i+"1.png";
+
+				} else
+					id[i].src="public/img/ui/footer/"+i+"2.png";
+
+			}
+		}
+</script>
+</html>
+
+
