@@ -316,14 +316,21 @@
 			width: 25%;
 			a {
 				display: block;
-				&.active {
-					color: red;
+				//&.active {
+				//	color: red;
+				//}
+				> i.active {//高亮图标时的文字
+					& + p {
+						color: @nav-buttom-text-highlight-color;
+					}
 				}
 			}
+
 			p {
-				line-height: unit(25/@base-px-2-rem, rem);
+				color: @nav-buttom-text-color;
+				line-height: unit(35/@base-px-2-rem, rem);
 				font-size: 12px;
-				transform: scale(0.9);
+				transform: scale(1);
 				@media screen and (min-width: 768px) {
 					font-size: 20px;
 					letter-spacing: 2px;
