@@ -1,0 +1,426 @@
+//55 33
+@import "value.less";
+
+i.icon {
+	width: unit(round(@search-bar-icon-size/@base-px-2-rem, 1), rem);
+	height: unit(round(@search-bar-icon-size/@base-px-2-rem, 1), rem);
+	background-origin: content-box;
+	background-repeat: no-repeat;
+	display: inline-block;
+	background-size: 100% 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/********************
+
+	首页搜索栏、导航栏icon
+
+	********************/
+	&.message {
+		background-image: url("@{icon-address}/message@2x.png");
+		margin-left: unit(round(40/@base-px-2-rem, 1), rem);
+		margin-right: unit(round(30/@base-px-2-rem, 1), rem);
+	}
+	&.search {
+		background-image: url("@{icon-address}/search@2x.png");
+		width: unit(round(@search-input-icon-size/@base-px-2-rem, 1), rem);
+		height: unit(round(@search-input-icon-size/@base-px-2-rem, 1), rem);
+		margin-left: unit(round(40/@base-px-2-rem, 1), rem);
+		margin-right: unit(round(30/@base-px-2-rem, 1), rem);
+		margin-top: unit(round(10/@base-px-2-rem, 1), rem);
+	}
+	&.scan {
+		background-image: url("@{icon-address}/scan@2x.png");
+		margin-right: unit(round(30/@base-px-2-rem, 1), rem);
+	}
+	/********************
+
+	底部导航栏icon
+
+	********************/
+	&.home {
+		background-image: url("@{icon-address}/home.png");
+		width: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 1), rem);
+		height: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 1), rem);
+		&.active {//高亮
+			background-image: url("@{icon-address}/home_black.png");
+			& + p {
+				color: #333
+			}
+		}
+	}
+	&.bag {
+		background-image: url("@{icon-address}/bag.png");
+		width: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 1), rem);
+		height: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 1), rem);
+		&.active {
+			background-image: url("@{icon-address}/bag_black.png");
+			& + p {
+				color: #333
+			}
+		}
+	}
+	&.list {
+		background-image: url("@{icon-address}/list.png");
+		width: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 1), rem);
+		height: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 1), rem);
+		&.active {
+			background-image: url("@{icon-address}/list_black.png");
+			& + p {
+				color: #333
+			}
+		}
+	}
+	&.my {
+		background-image: url("@{icon-address}/my.png");
+		width: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 1), rem);
+		height: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 1), rem);
+		&.active {
+			background-image: url("@{icon-address}/my_black.png");
+			& + p {
+				color: #333
+			}
+		}
+	}
+	/********************
+
+	返回顶部icon
+
+	********************/
+	//返回顶部
+	&.totop {
+		background-image: url("@{icon-address}/gotop@2x.png");
+		width: unit(round(@go-to-top-icon-size/@base-px-2-rem, 1), rem);
+		height: unit(round(@go-to-top-icon-size/@base-px-2-rem, 1), rem);
+	}
+	/********************
+
+	标题栏icon
+
+	********************/
+	//返回
+	&.back {
+		background-image: url("@{icon-address}/back@2x.png");
+	}
+	//分享
+	&.share {
+		background-image: url("@{icon-address}/share@2x.png");
+		width: unit(round((@base-nav-bar-icon-size - 20) /@base-px-2-rem, 1), rem);
+		height: unit(round((@base-nav-bar-icon-size - 20) /@base-px-2-rem, 1), rem);
+		margin-right: unit(round(20/@base-px-2-rem, 1), rem);
+		margin-top: unit(round(15/@base-px-2-rem, 1), rem);
+	}
+	/********************
+
+	评论块右指示
+
+	********************/
+	&.right {
+		background-image: url("@{icon-address}/right.png");
+		//margin-left: unit(10/@base-px-2-rem, rem);
+		width: unit(round((28 * 0.7)/@base-px-2-rem, 2), rem);
+		height: unit(round((56 * 0.7)/@base-px-2-rem, 2), rem);
+	}
+	/********************
+
+	商品左下角 收藏 购物车 客服
+
+	********************/
+	&.details-collect {
+		background-image: url("@{icon-address}/details-collect-1.jpg");
+		margin-top: unit(round(5/@base-px-2-rem, 2), rem);
+		width: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 2), rem);
+		height: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 2), rem);
+	}
+	//红色收藏
+	&.collect-red {
+		background-image: url("@{icon-address}/collect-red.png");
+		margin-top: unit(round(5/@base-px-2-rem, 2), rem);
+		width: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 2), rem);
+		height: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 2), rem);
+	}
+	&.details-shopcar {
+		background-image: url("@{icon-address}/details-shopcar-1.jpg");
+		margin-top: unit(round(5/@base-px-2-rem, 2), rem);
+		width: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 2), rem);
+		height: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 2), rem);
+	}
+	&.details-services {
+		background-image: url("@{icon-address}/details-services-1.jpg");
+		margin-top: unit(round(5/@base-px-2-rem, 2), rem);
+		width: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 2), rem);
+		height: unit(round(@nav-bottom-bar-icon-size/@base-px-2-rem, 2), rem);
+	}
+	/********************
+
+	购物车 勾选 加 减
+
+	********************/
+	&.checked {
+		background-image: url("@{icon-address}/checked.png");
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+	}
+	&.no-check {
+		background-image: url("@{icon-address}/no-check.png");
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+	}
+	&.add {
+		background-image: url("@{icon-address}/add.png");
+		background-position: center;
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+	}
+	&.minus {
+		background-image: url("@{icon-address}/minus.png");
+		background-position: center;
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+	}
+	/********************
+
+	我的页面  我的收藏 心愿单 到货提醒
+
+	********************/
+	&.collect {
+		background-image: url("@{icon-address}/collect.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	&.heart {
+		background-image: url("@{icon-address}/heart.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	&.clock {
+		background-image: url("@{icon-address}/clock.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+
+	/********************
+
+	我的拼团 全部 拼团成功 拼团中 拼团失败 4个
+
+	********************/
+
+	&.cyclo-all {
+		background-image: url("@{icon-address}/cyclo-all.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	&.cyclo-correct {
+		background-image: url("@{icon-address}/cyclo-correct.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	&.cyclo-people {
+		background-image: url("@{icon-address}/cyclo-people.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	&.cyclo-alert {
+		background-image: url("@{icon-address}/cyclo-alert.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+
+	/********************
+
+	我的页面 待付款 待发货 待收货 待评价 4个
+
+	********************/
+	&.wallet {
+		background-image: url("@{icon-address}/wallet.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	&.car {
+		background-image: url("@{icon-address}/car.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	&.package {
+		background-image: url("@{icon-address}/package.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	&.comment {
+		background-image: url("@{icon-address}/comment.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+
+	/********************
+
+	我的页面  收货地址 我的足迹 优惠券  退货/退款  4个
+
+	********************/
+	&.addr {
+		background-image: url("@{icon-address}/addr.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	&.history {
+		background-image: url("@{icon-address}/history.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	&.coupon {
+		background-image: url("@{icon-address}/coupon.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	&.refund {
+		background-image: url("@{icon-address}/refund.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	/********************
+
+	我的页面  客服 个人资料 关于就手 退出登陆 4个
+
+	********************/
+	&.people {
+		background-image: url("@{icon-address}/people.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	&.me {
+		background-image: url("@{icon-address}/me.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	&.info {
+		background-image: url("@{icon-address}/info.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	&.exit {
+		background-image: url("@{icon-address}/exit.png");
+		width: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+		height: unit(round(@my-page-icon-size-small/@base-px-2-rem, 1), rem);
+	}
+	/********************
+
+	QQ 微信
+
+	********************/
+	&.qq {
+		background-image: url("@{icon-address}/qq.png");
+		width: unit(round((@my-page-icon-size + 1)/@base-px-2-rem, 1), rem);
+		height: unit(round((@my-page-icon-size + 1)/@base-px-2-rem, 1), rem);
+	}
+	&.wechat {
+		background-image: url("@{icon-address}/wechat.png");
+		width: unit(round((@my-page-icon-size + 1)/@base-px-2-rem, 1), rem);
+		height: unit(round((@my-page-icon-size + 1)/@base-px-2-rem, 1), rem);
+	}
+	/********************
+
+	登陆页面 输入框
+
+	********************/
+	&.account {
+		background-image: url("@{icon-address}/account.png");
+		margin: 0 unit(round(25/@base-px-2-rem, 1), rem);
+		width: unit(round(@input-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@input-icon/@base-px-2-rem, 2), rem);
+	}
+	&.password {
+		background-image: url("@{icon-address}/password.png");
+		margin: 0 unit(round(25/@base-px-2-rem, 1), rem);
+		width: unit(round(@input-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@input-icon/@base-px-2-rem, 2), rem);
+	}
+	/********************
+
+	支付方式 支付宝 通联
+
+	********************/
+	&.allinpay {
+		background-image: url("@{icon-address}/allinpay.png");
+		margin: 0 unit(round(25/@base-px-2-rem, 1), rem);
+		width: unit(round(@input-icon/@base-px-2-rem, 1), rem);
+		height: unit(round(@input-icon/@base-px-2-rem, 1), rem);
+	}
+	&.alipay {
+		background-image: url("@{icon-address}/alipay.png");
+		margin: 0 unit(round(25/@base-px-2-rem, 1), rem);
+		width: unit(round(@input-icon/@base-px-2-rem, 1), rem);
+		height: unit(round(@input-icon/@base-px-2-rem, 1), rem);
+	}
+	&.wechat-pay {
+		background-image: url("@{icon-address}/wechat-pay.png");
+		margin: 0 unit(round(25/@base-px-2-rem, 1), rem);
+		width: unit(round(@input-icon/@base-px-2-rem, 1), rem);
+		height: unit(round(@input-icon/@base-px-2-rem, 1), rem);
+	}
+	/********************
+
+	订单详情
+
+	********************/
+	&.truck {
+		background-image: url("@{icon-address}/truck.png");
+		//大
+		margin: unit(round(10/@base-px-2-rem, 2), rem) unit(round(25/@base-px-2-rem, 2), rem);
+		width: unit(round((@input-icon+ 80)/@base-px-2-rem, 2), rem);
+		height: unit(round((@input-icon+ 80)/@base-px-2-rem, 2), rem);
+	}
+	&.location {
+		background-image: url("@{icon-address}/location.png"); //小
+		margin: unit(round(8/@base-px-2-rem, 2), rem) unit(round(25/@base-px-2-rem, 2), rem) 0;
+		width: unit(round((@input-icon - 10)/@base-px-2-rem, 2), rem);
+		height: unit(round((@input-icon - 10)/@base-px-2-rem, 2), rem);
+	}
+	/********************
+
+	发表评价
+
+	********************/
+	&.bad {
+		background-image: url("@{icon-address}/bad.png");
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+	}
+	&.bad-gray {
+		background-image: url("@{icon-address}/bad-gray.png");
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+	}
+	&.good {
+		background-image: url("@{icon-address}/good.png");
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+	}
+	&.good-gray {
+		background-image: url("@{icon-address}/good-gray.png");
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+	}
+	&.not-good {
+		background-image: url("@{icon-address}/not-good.png");
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+	}
+	&.not-good-gray {
+		background-image: url("@{icon-address}/not-good-gray.png");
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+	}
+	/********************
+
+	五星
+
+	********************/
+	&.star-gray {
+		background-image: url("@{icon-address}/star-gray.png");
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+	}
+	&.star-red {
+		background-image: url("@{icon-address}/star-red.png");
+		width: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+		height: unit(round(@shopcar-check-icon/@base-px-2-rem, 2), rem);
+	}
+}

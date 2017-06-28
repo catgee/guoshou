@@ -1,0 +1,655 @@
+@import "value.less";
+@import "func.less";
+@import "base.less";
+
+html {
+}
+
+body {
+	background-color: @wrapper-bg-color;
+	color: #333;
+}
+
+a {
+	display: block;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.text-red {
+	color: @red;
+}
+
+.text-black {
+	color: #333;
+}
+
+.text-16 {
+	font-size: 16px;
+}
+
+textarea {
+	width: 100%;
+	resize: none;
+}
+
+// body 下的容器
+.wrapper {
+	width: 100%;
+	background-color: @wrapper-bg-color;
+	margin: 0 auto;
+	max-width: @max-width;
+	//解决子元素martop 不生效的问题
+	//w3cshcool中的解释是：外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。
+	//合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。
+	padding-top: unit(1/@base-px-2-rem, rem);
+	//overflow: hidden;
+	//height: auto;
+}
+
+button {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/************************
+
+产品容器
+
+************************/
+
+.base-mt-wrapper() {
+	//defluat 140
+	margin-top: unit(@base-mt/@base-px-2-rem, rem);
+	background-color: #fff;
+	//overflow: hidden;
+	&:first-child {
+		margin-top: unit(0/@base-px-2-rem, rem);
+	}
+}
+
+.base-mt-wrapper {
+	.base-mt-wrapper();
+	/*精品推荐*/
+	.base-title(none);
+	&.pt-40 {
+		padding-top: unit(40 /@base-px-2-rem, rem);
+	}
+	&.no-tbpdding {
+		padding: 0 unit(40/@base-px-2-rem, rem);
+	}
+	&.pd {
+		padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+	}
+	&.b-line {
+		border-bottom: 1px solid @border-color-gray-light;
+	}
+	&.no-mart {
+		margin-top: 0;
+	}
+}
+
+.base-wrapper() {
+	//defluat 140
+	background-color: #fff;
+	overflow: hidden;
+	border-bottom: 1px solid @border-color-gray-light;
+	padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+}
+
+.base-wrapper {
+	.base-wrapper();
+	&.no-thing {
+		padding: 0;
+	}
+	&.no-tbpdding {
+		padding: 0 unit(40/@base-px-2-rem, rem);
+		border: 0;
+	}
+	&.no-border {
+		border: 0;
+	}
+}
+
+//左右内边距
+.base-pd-lr-wrapper() {
+	background-color: #fff;
+	padding: 0 unit(@base-pd-lr/@base-px-2-rem, rem);
+	height: 100%;
+}
+
+//上下内边距
+.base-pd-tb-wrapper() {
+	background-color: #fff;
+	padding: unit(round(@base-pd-tb/@base-px-2-rem, 2), rem) 0;
+}
+
+//全内边距
+.base-pd-wrapper() {
+	background-color: #fff;
+	padding: unit(round(@base-pd-tb/@base-px-2-rem, 2), rem);
+}
+
+.base-pd-lr-wrapper {
+	.base-pd-lr-wrapper();
+}
+
+.base-pd-tb-wrapper {
+	.base-pd-tb-wrapper();
+}
+
+.base-pd-wrapper {
+	.base-pd-wrapper();
+}
+
+/************************
+
+通用消息提示
+
+************************/
+
+.base-msg-pop {
+	background-color: rgba(20, 20, 20, .75);
+	width: 35% !important;
+	.layui-m-layercont {
+		padding: 0;
+		line-height: 22px;
+		text-align: center;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+		padding: unit(10/@base-px-2-rem, rem);
+		letter-spacing: 1px;;
+	}
+}
+
+/************************
+
+按钮样式
+
+************************/
+
+button {
+	.button();
+}
+
+.button() {
+	padding: unit(25/@base-px-2-rem, rem) unit(80/@base-px-2-rem, rem);
+	color: #fff;
+	border-radius: 5px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.button_disabled_function() {
+	&.disabled, &[disabled] {
+		pointer-events: none;
+		background-color: @btn-disable !important;
+		cursor: not-allowed !important;
+		filter: alpha(opacity=65);
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+}
+
+.hollow_button_disabled_function() {
+	&.disabled, &[disabled] {
+		pointer-events: none;
+		border-color: @btn-disable !important;
+		color: @btn-disable !important;
+		cursor: not-allowed !important;
+		filter: alpha(opacity=65);
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		//opacity: .65;
+	}
+}
+
+button[disabled], button.disabled {
+	pointer-events: none;
+	background-color: @btn-disable;
+	cursor: not-allowed;
+	filter: alpha(opacity=65);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+button.goGroupBuy {
+	.button();
+	border-radius: 20px;
+	padding: unit(15/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+	font-size: 15px;
+	background-color: @red;
+}
+
+a.button {
+	.button();
+}
+
+/************************
+
+     制造圆角
+
+************************/
+
+.make-border-radius(@px) {
+	border-radius: @px;
+}
+
+/************************
+
+单个产品展示 构造函数
+
+************************/
+
+.single-product() {
+	width: 100%;
+	a {
+		padding-right: unit(50/@base-px-2-rem, rem);
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		//http://stackoverflow.com/questions/15381172/css-flexbox-child-height-100
+		//使项目下的所有元素高度100%
+		align-items: stretch;
+		//修复移动端图显示不正常
+		position: relative;
+	}
+	div.product-imgBox {
+		padding: unit(10/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+		width: 40%;
+		img {
+			width: 100%;
+		}
+		&::after {
+			display: none;
+		}
+		&.soldout {
+			&:after {
+				content: '';
+				display: block;
+				background-image: url("@{icon-address}/soldout.png");
+				background-size: 50%;
+				background-repeat: no-repeat;
+				background-position: center center;
+				left: 0;
+				bottom: 0;
+				border: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+		}
+	}
+	.product-name-price {
+		//该项目主轴为纵向
+		//为容器增加上下边距 使得  space-between 能够布局
+		width: 60%;
+		padding: unit(80/@base-px-2-rem, rem) 0;
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+		p {
+			&:nth-child(2) {
+				color: @red;
+				span {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
+
+.no-swiper-product {
+	.single-product();
+}
+
+/************************
+
+单个产品展示
+one-product
+商品图占一行
+下面是文字和价格
+
+************************/
+
+//弃用
+.one-product {
+	padding-bottom: unit(50/@base-px-2-rem, rem);
+	img {
+		width: 100%;
+		border-top: 1px solid @border-color-gray-very-light;
+		//height: unit(630/@base-px-2-rem, rem);
+		// -webkit-transform: scale(1.2,1.2);
+		// transform:  scale(1.2,1.2);
+		padding: 0 unit(100/@base-px-2-rem, rem);
+	}
+	p {
+		padding: 0 unit(50/@base-px-2-rem, rem);
+		font-size: 14px;
+		+ p {
+			text-align: right;
+			color: red;
+			font-weight: 600;
+		}
+		@media screen and (min-width: 768px) {
+			font-size: 20px;
+			letter-spacing: 2px;
+		}
+	}
+}
+
+/*************************
+
+single-goods
+左边是商品图
+右边是文字和价格
+
+
+*************************/
+
+.single-goods {
+	border-top: 1px solid @border-color-gray-very-light;
+	&:last-child {
+		border-bottom: 1px solid @border-color-gray-very-light;
+	}
+	.single-product();
+}
+
+/*************************
+团购
+group-goods
+上面是商品图
+下面是团购价格 几人团 和开团按钮
+
+
+*************************/
+
+.group-goods {
+	padding: 0 unit(50/@base-px-2-rem, rem);
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	> p {
+		.text-omit();
+		font-size: 14px;
+	}
+	.group-goods-imgBox {
+		height: unit(400/@base-px-2-rem, rem);
+		width: unit(400/@base-px-2-rem, rem);
+		img {
+			height: unit(400/@base-px-2-rem, rem);
+			width: unit(400/@base-px-2-rem, rem);
+		}
+	}
+}
+
+//团购文字栏
+.group-goods-info {
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: unit(40/@base-px-2-rem, rem) 0;
+	.group-goods-price {
+		//width: 38%;
+		p {
+			line-height: 140%;
+			&:first-child {
+				font-weight: 600;
+				color: @red;
+				font-size: 16px;
+				@media (min-width: 375px) {
+					font-size: 17px;
+				}
+			}
+		}
+	}
+	//两人团
+	> p {
+		color: @red;
+		font-size: 16px;
+		text-align: left;
+		letter-spacing: 1px;
+		@media (min-width: 375px) {
+			font-size: 17px;
+			margin-right: unit(10/@base-px-2-rem, rem);
+		}
+	}
+	button {
+		//width: 28%;
+	}
+}
+
+/************************
+
+2X2产品页
+
+************************/
+
+.base-mt-wrapper {
+	.make-2X2-product-box();
+	//have product-box-wrapper
+}
+
+//产品专场下的 2X2 商品展示容器 及 布局
+.make-2X2-product-box() {
+	//
+	.product-box-wrapper {
+		width: 100%;
+		padding: unit(20/@base-px-2-rem, rem);
+		> .product-box {
+			display: inline-block;
+			width: 49%;
+			a {
+				//display: block;
+				//width: 49.5%;
+				text-align: center;
+				img {
+					//http://stackoverflow.com/questions/7055393/center-image-using-text-align-center
+					//fix the img in the block containers
+					//img is an inline ele
+					height: unit(360/@base-px-2-rem, rem);
+					display: block;
+					margin: 0 auto;
+				}
+				p {
+					text-overflow: ellipsis;
+					line-height: 1.4em;
+					height: 2.8em;
+					overflow: hidden;
+					@media screen and (min-width: 768px) {
+						font-size: 20px;
+						letter-spacing: 2px;
+					}
+					& + p {
+						color: red;
+						font-weight: 600;
+					}
+				}
+			}
+		}
+	}
+}
+
+/************************
+
+商品图售罄样式
+
+************************/
+
+.soldout {
+	position: relative;
+	&:after {
+		position: absolute;
+		content: '';
+		display: block;
+		background-image: url("@{icon-address}/soldout.png");
+		background-size: 37%;
+		background-repeat: no-repeat;
+		background-position: center center;
+		left: 0;
+		bottom: 0;
+		border: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+/************************
+
+大屏下字体修复
+
+************************/
+
+.mod-retina-display(@fs, @ls) {
+	p {
+		@media screen and (min-width: 768px) {
+			font-size: @fs;
+			letter-spacing: @ls;
+		}
+	}
+	@media screen and (min-width: 768px) {
+		font-size: @fs;
+		letter-spacing: @ls;
+	}
+}
+
+/************************
+
+通用单行文字标题栏
+
+************************/
+
+.base-title(@line-arg) when (@line-arg =none) {
+	p.recommend, p.guess-you-like , .groupbuy-details-userinfo-wrapper > p{
+		width: 100%;
+		text-align: center;
+		.make-line-and-height-p(@big-banner-text-height);
+		font-size: 15px;
+		background-color: #fff;
+		letter-spacing: 1px;
+		color: #000;
+		font-weight: 500;
+		.mod-retina-display(20px, 2px);
+	}
+}
+
+/************************
+
+容器下的第一个p 两边有线
+
+************************/
+
+.base-title(@line-arg) when (@line-arg =line) {
+	p.recommend, p.guess-you-like, .groupbuy-details-userinfo-wrapper > p {
+		.make-line-and-height-p(@big-banner-text-height);
+		.mod-retina-display(20px, 2px);
+		position: relative;
+		width: 100%;
+		text-align: center;
+		font-size: 15px;
+		background-color: #fff;
+		letter-spacing: 1px;
+		color: #000;
+		font-weight: 500;
+
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 5%;
+			height: 1px;
+			width: 20%;
+			background-color: #aaa;
+		}
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 50%;
+			right: 5%;
+			height: 1px;
+			width: 20%;
+			background-color: #aaa;
+		}
+	}
+}
+
+/************************
+
+创建fixed元素
+
+************************/
+
+.make-fixed-bar(@height) {
+	position: fixed;
+	z-index: @z-index-nav-search-bar;
+	width: 100%;
+	max-width: @max-width;
+	height: unit(@height/@base-px-2-rem, rem);
+	background-color: #fff;
+}
+
+/************************
+
+//文字超出隐藏省略
+//用于 p
+//需要使用 width: 100%;
+
+************************/
+
+.text-omit() {
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+//p 元素高度占位 用于移动设备
+.make-line-and-height-p(@number) {
+	height: unit(@number/@base-px-2-rem, rem);
+	line-height: unit(@number/@base-px-2-rem, rem);
+}
+
+
+//p 元素高度占位 用于移动设备
+.make-big-img-p(@big-banner-text-height) {
+	> p {
+		width: 100%;
+		// height: unit(100/@base-px-2-rem, rem);
+		// line-height: unit(100/@base-px-2-rem, rem);
+		.make-line-and-height-p(@big-banner-text-height);
+		text-align: center;
+		font-size: 15px;
+		background-color: #fff;
+		letter-spacing: 1px;
+		color: #000;
+		font-weight: 500;
+		@media screen and (min-width: 768px) {
+			font-size: 20px;
+			letter-spacing: 2px;
+		}
+	}
+}
+
+/************************
+
+盒子阴影
+@direction top bottom
+************************/
+
+.fixed-shadow(@direction, @num) when (@direction = top ) {
+	box-shadow: 0 (-1 * @num) 5px 0 @border-color-gray-very-light;
+
+}
+
+.fixed-shadow(@direction, @num) when (@direction = bottom ) {
+	box-shadow: 0 @num 5px 0 @border-color-gray-very-light;
+
+}
+
+

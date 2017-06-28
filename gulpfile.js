@@ -53,9 +53,11 @@ gulp.task('copyJS', function () {
 gulp.task('browser-sync', ['compileLess', 'minify-css'], function () {
     browserSync.init({
         files: browser_config.watchFiles,
-        server: {
-            baseDir: browser_config.baseDir
-        }
+        // server: {
+        //     baseDir: browser_config.baseDir
+        // },
+        proxy: "www.guoshou.com"
+
     });
     gulp.watch('src/less/*.less', ['compileLess']);
     gulp.watch('dist/css/*.css', ['minify-css']);
