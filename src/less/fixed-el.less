@@ -414,7 +414,7 @@
 	.make-fixed-bar(@base-nav-bar-height);
 	top: 0;
 	//border-bottom: 1px solid @bar-border-color;
-	.fixed-shadow(bottom, 1px);
+	//.fixed-shadow(bottom, 1px);
 	// padding-top: unit(@search-bar-blank*2/@base-px-2-rem, rem);
 	// padding-bottom: unit(@search-bar-blank*2/@base-px-2-rem, rem);
 	// text-align: center;
@@ -422,6 +422,7 @@
 	flex-flow: row nowrap;
 	justify-content: space-between;
 	align-items: center;
+	background-color: rgba( 0, 0, 0, 0);
 	//顶部栏 文字标题
 	> p {
 		//float: left;
@@ -438,7 +439,7 @@
 		//text-overflow:ellipsis;
 	}
 	a {
-		padding-right: unit(35/@base-px-2-rem, rem);
+		padding: 0 unit(35/@base-px-2-rem, rem);
 		font-size: 16px;
 		font-weight: 600;
 		line-height: unit((@search-bar-height - @nav-bar-blank*2) /@base-px-2-rem, rem);

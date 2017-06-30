@@ -640,8 +640,6 @@ iframe {
   height: 1.32042254rem;
   background-color: #fff;
   top: 0;
-  -webkit-box-shadow: 0 1px 5px 0 #ebebeb;
-          box-shadow: 0 1px 5px 0 #ebebeb;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -659,6 +657,7 @@ iframe {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: rgba(0, 0, 0, 0);
 }
 .base-nav-bar > p {
   font-size: 16px;
@@ -678,7 +677,7 @@ iframe {
   }
 }
 .base-nav-bar a {
-  padding-right: 0.30809859rem;
+  padding: 0 0.30809859rem;
   font-size: 16px;
   font-weight: 600;
   line-height: 0.79225352rem;
@@ -1327,7 +1326,10 @@ i.icon.totop {
   height: 0.8rem;
 }
 i.icon.back {
-  background-image: url("../img/icon/back@2x.png");
+  background-image: url("../img/icon/back.png");
+}
+i.icon.service {
+  background-image: url("../img/icon/service.png");
 }
 i.icon.share {
   background-image: url("../img/icon/share@2x.png");
