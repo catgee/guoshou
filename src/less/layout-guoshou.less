@@ -1,6 +1,7 @@
 @import "value.less";
 @import "func.less";
 @import "base.less";
+@import "circle.less";
 
 .padding-box {
   .padding-box()
@@ -131,29 +132,6 @@
   }
 }
 
-//订单详情页
-
-.circle-time {
-  margin-top: unit(40/@base-px-2-rem, rem);
-  width: unit(250/@base-px-2-rem, rem);;
-  height: unit(250/@base-px-2-rem, rem);;
-  border: 3px solid #111111;
-  border-radius: 100%;
-  & p {
-    &:first-child {
-      font-weight: 600;
-      font-size: 18px;
-      color: #111;
-    }
-
-    &:last-child {
-      font-size: 10px;
-      color: @border-color-gray;
-    }
-  }
-
-}
-
 .s-red {
   color: @orange-red !important;
   font-size: 9px;
@@ -167,6 +145,7 @@
   letter-spacing: 1px;
   margin: unit(20/@base-px-2-rem, rem) 0;
 }
+
 p.coupon {
   &:before {
     position: relative;
