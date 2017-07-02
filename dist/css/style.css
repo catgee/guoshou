@@ -2223,7 +2223,7 @@ group-goods
   position: absolute;
   top: 0.66rem;
   line-height: 0.528rem;
-  width: 2.201rem;
+  width: 2.2rem;
   text-align: center;
   display: block;
   color: #53777A;
@@ -2232,11 +2232,11 @@ group-goods
 .left-half-clipper {
   /* a round circle */
   border-radius: 50%;
-  width: 2.201rem;
-  height: 2.201rem;
+  width: 2.2rem;
+  height: 2.2rem;
   position: absolute;
   /* needed for clipping */
-  clip: rect(0, 2.201rem, 2.201rem, 1.1rem);
+  clip: rect(0, 2.2rem, 2.2rem, 1.1rem);
   /* clips the whole left half*/
 }
 /* when p>50, don't clip left half*/
@@ -2249,11 +2249,11 @@ group-goods
   to escape the outer clipping path.*/
   position: absolute;
   /*needed for clipping*/
-  clip: rect(0, 1.1rem, 2.201rem, 0);
-  width: 2.201rem;
-  height: 2.201rem;
+  clip: rect(0, 1.1rem, 2.2rem, 0);
+  width: 2.2rem;
+  height: 2.2rem;
   border-radius: 50%;
-  border: 0.5em solid #c7cdc1;
+  border: 0.7em solid #c7cdc1;
   /*The border is 0.35 but making it larger removes visual artifacts */
   /*background-color: #4D642D;*/
   /* for debug */
@@ -2265,11 +2265,11 @@ group-goods
   /*Progress bar for the first 50%, filling the whole right half*/
   position: absolute;
   /*needed for clipping*/
-  clip: rect(0, 2.20070423rem, 2.20070423rem, 1.10035211rem);
+  clip: rect(0, 2.2rem, 2.2rem, 1.10035211rem);
   background-color: #53777A;
   border-radius: 50%;
-  width: 2.20070423rem;
-  height: 2.20070423rem;
+  width: 2.2rem;
+  height: 2.2rem;
 }
 .progress-circle:not(.over50) .first50-bar {
   display: none;

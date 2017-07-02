@@ -1,12 +1,14 @@
-
+@circle-width: unit(round(250/@base-px-2-rem, 2), rem);
+@circle-color: rgb(199, 205, 193);
+@circle-color-bg: rgb(0, 0, 0);
 //订单详情页
 //倒计时环形
 
 .progress-circle {
   margin-top: unit(round(40/@base-px-2-rem, 2), rem);
-  width: unit(round(250/@base-px-2-rem, 2), rem);
-  height: unit(round(250/@base-px-2-rem, 2), rem);
-  background-color: rgb(0, 0, 0);
+  width: @circle-width;
+  height: @circle-width;
+  background-color: @circle-color-bg;
   position: relative;
 
   //border: 3px solid #111111;
@@ -45,7 +47,7 @@
   position: absolute;
   top: unit(round(75/@base-px-2-rem, 3), rem);
   line-height: unit(round(60/@base-px-2-rem, 3), rem);
-  width: unit(round(250/@base-px-2-rem, 3), rem);
+  width: @circle-width;
   text-align: center;
   display: block;
   color: #53777A;
@@ -55,10 +57,10 @@
 .left-half-clipper {
   /* a round circle */
   border-radius: 50%;
-  width: unit(round(250/@base-px-2-rem,3), rem);
-  height: unit(round(250/@base-px-2-rem,3), rem);
+  width: @circle-width;
+  height: @circle-width;
   position: absolute; /* needed for clipping */
-  clip: rect(0, unit(round(250/@base-px-2-rem, 3),rem), unit(round(250/@base-px-2-rem,3), rem), unit(round(125/@base-px-2-rem,3), rem)); /* clips the whole left half*/
+  clip: rect(0, @circle-width, @circle-width, unit(round(125/@base-px-2-rem,3), rem)); /* clips the whole left half*/
 }
 
 /* when p>50, don't clip left half*/
@@ -71,11 +73,11 @@
   then it is cut to display only the left half, then rotated clockwise
   to escape the outer clipping path.*/
   position: absolute; /*needed for clipping*/
-  clip: rect(0, unit(round(125/@base-px-2-rem,3), rem), unit(round(250/@base-px-2-rem,3), rem), 0);
-  width: unit(round(250/@base-px-2-rem,3), rem);
-  height: unit(round(250/@base-px-2-rem,3), rem);
+  clip: rect(0, unit(round(125/@base-px-2-rem,3), rem), @circle-width, 0);
+  width: @circle-width;
+  height: @circle-width;
   border-radius: 50%;
-  border: 0.5em solid rgb(199, 205, 193); /*The border is 0.35 but making it larger removes visual artifacts */
+  border: 0.7em solid @circle-color; /*The border is 0.35 but making it larger removes visual artifacts */
   /*background-color: #4D642D;*/ /* for debug */
   box-sizing: border-box;
 
@@ -85,11 +87,11 @@
 .progress-circle.over50 .first50-bar {
   /*Progress bar for the first 50%, filling the whole right half*/
   position: absolute; /*needed for clipping*/
-  clip: rect(0, unit(250/@base-px-2-rem, rem), unit(250/@base-px-2-rem, rem), unit(125/@base-px-2-rem, rem));
+  clip: rect(0, @circle-width, @circle-width, unit(125/@base-px-2-rem, rem));
   background-color: #53777A;
   border-radius: 50%;
-  width: unit(250/@base-px-2-rem, rem);
-  height: unit(250/@base-px-2-rem, rem);
+  width: @circle-width;
+  height: @circle-width;
 }
 
 .progress-circle:not(.over50) .first50-bar {
