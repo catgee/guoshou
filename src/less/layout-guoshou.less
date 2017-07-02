@@ -3,6 +3,7 @@
 @import "base.less";
 @import "circle.less";
 
+@bg-color: #F2F2F2;
 .padding-box {
   .padding-box()
 }
@@ -149,13 +150,14 @@
 p.coupon {
   &:before {
     position: relative;
-    display: inline-block;
+    display: inline;
     content: '减';
     font-size: 10px;
     color: #fff;
     background-color: rgb(246, 104, 119);
-    border-radius: 2px;
-    padding: unit(5/@base-px-2-rem, rem) unit(10/@base-px-2-rem, rem);
+    border-radius: 3px;
+    padding: unit(6/@base-px-2-rem, rem) unit(10/@base-px-2-rem, rem);
     margin-right: unit(10/@base-px-2-rem, rem);
+    bottom: unit(5/@base-px-2-rem, rem);
   }
 }

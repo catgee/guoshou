@@ -13,7 +13,6 @@
 //@import "animate.less";
 @import "common.less";
 //@import "groupbuy.less";
-
 @import "layout-guoshou.less";
 
 /************************
@@ -23,7 +22,7 @@ Swiper 分页指示器颜色
 ************************/
 
 .swiper-pagination-bullet-active {
-	background-color: @red !important;
+  background-color: @red !important;
 }
 
 /************************
@@ -34,85 +33,96 @@ Swiper 分页指示器颜色
 ************************/
 
 .main-wrapper {
-	//main-wrapper 同级的class 用来标识 不同页面
-	position: relative;
-	width: 100%;
-	max-width: @max-width;
-	margin-top: unit(round((2)/@base-px-2-rem, 1), rem);
-	padding-bottom: unit(round((@nav-bottom-bar-height ) /@base-px-2-rem, 1), rem);
-	background-color: @wrapper-bg-color;
-	overflow: hidden;
-	//feature 只存在标题栏时，高度为 search-bar的高度
-	//各种页面下 可见块的顶部边距
-	&.title-bar {
-		margin-top: unit(round((@base-nav-bar-height)/@base-px-2-rem, 1), rem);
-		padding-bottom: unit(round((@nav-bottom-bar-height ) /@base-px-2-rem, 1), rem);
-		&.h-100-white {
-			background-color: #fff;
-		}
-		&.no-b-nav {
-			padding-bottom: 0;
-		}
-	}
-	&.h-title-bar {
-		margin-top: unit(round((@base-nav-bar-height + @nav-bar-height)/@base-px-2-rem, 1), rem);
-		padding-bottom: unit(round((@nav-bottom-bar-height) /@base-px-2-rem, 1), rem);
-		&.h-100-white {
-			background-color: #fff;
-		}
-		&.no-b-nav {
-			padding-bottom: 0;
-		}
-	}
-	&.feature {
-		padding-bottom: unit(0 /@base-px-2-rem, rem);
-	}
-	&.shopcar {
-		padding-bottom: unit(round((@nav-bottom-bar-height)*2    /@base-px-2-rem, 1), rem);
-	}
-	&.my-page {
-		background-color: @my-page-bg-color;
-		margin-bottom: unit(round(120 /@base-px-2-rem, 1), rem);
-		//修复小屏幕显示页面显示不全
-		@media screen and (max-height: 600px) {
-			overflow: visible;
-		}
-		&.no-mart {
-			margin-top: 0;
-		}
-	}
-	&.my-center {
-		background-color: #fff;
-		padding-bottom: 0;
-	}
-	&.about {
-		iframe {
-			width: 100%;
-		}
-		&.no-mart {
-			margin-top: 0;
-		}
-	}
-	&.searchresult {
-		overflow: visible;
-		.base-product-label:last-of-type {
-			border-bottom: 1px solid #b2b3b4;
-		}
-	}
+  //main-wrapper 同级的class 用来标识 不同页面
+  position: relative;
+  width: 100%;
+  max-width: @max-width;
+  margin-top: unit(round((2)/@base-px-2-rem, 1), rem);
+  padding-bottom: unit(round((@nav-bottom-bar-height ) /@base-px-2-rem, 1), rem);
+  background-color: @wrapper-bg-color;
+  overflow: hidden;
+  //feature 只存在标题栏时，高度为 search-bar的高度
+  //各种页面下 可见块的顶部边距
+  &.title-bar {
+    margin-top: unit(round((@base-nav-bar-height)/@base-px-2-rem, 1), rem);
+    padding-bottom: unit(round((@nav-bottom-bar-height ) /@base-px-2-rem, 1), rem);
+    &.h-100-white {
+      background-color: #fff;
+    }
+    &.no-b-nav {
+      padding-bottom: 0;
+    }
+  }
+  &.h-title-bar {
+    margin-top: unit(round((@base-nav-bar-height + @nav-bar-height)/@base-px-2-rem, 1), rem);
+    padding-bottom: unit(round((@nav-bottom-bar-height) /@base-px-2-rem, 1), rem);
+    &.h-100-white {
+      background-color: #fff;
+    }
+    &.no-b-nav {
+      padding-bottom: 0;
+    }
+  }
+  &.feature {
+    padding-bottom: unit(0 /@base-px-2-rem, rem);
+  }
+  &.shopcar {
+    padding-bottom: unit(round((@nav-bottom-bar-height)*2    /@base-px-2-rem, 1), rem);
+  }
+  &.my-page {
+    background-color: @my-page-bg-color;
+    margin-bottom: unit(round(120 /@base-px-2-rem, 1), rem);
+    //修复小屏幕显示页面显示不全
+    @media screen and (max-height: 600px) {
+      overflow: visible;
+    }
+    &.no-mart {
+      margin-top: 0;
+    }
+  }
+  &.my-center {
+    background-color: #fff;
+    padding-bottom: 0;
+  }
+  &.about {
+    iframe {
+      width: 100%;
+    }
+    &.no-mart {
+      margin-top: 0;
+    }
+  }
+  &.searchresult {
+    overflow: visible;
+    .base-product-label:last-of-type {
+      border-bottom: 1px solid #b2b3b4;
+    }
+  }
 
-	&.no-mart {
-		margin-top: 0;
-	}
+  &.no-mart {
+    margin-top: 0;
+  }
 
-	&.h-100-white {
-		background-color: #fff;
-	}
+  &.no-mar-pad {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    &.orderDetail {
+      padding-bottom: unit(round(20 / @base-px-2-rem, 1), rem);
+    }
+
+  }
+
+  &.h-100-white {
+    background-color: #fff;
+  }
 
 }
 
 //首页所有产品容器
 .product-wrapper {
-	background-color: @wrapper-bg-color;
+  background-color: @wrapper-bg-color;
 }
 
 /************************
@@ -127,33 +137,33 @@ main-wrapper
 ************************/
 
 .big-banner {
-	.big-banner-imgBox {
-		width: 100%;
-		max-width: @max-width;
-		height: unit(round(750/@base-px-2-rem, 1), rem);
-		position: relative;
-		// to fix the big image split the page
-		// http://www.divcss5.com/wenji/w364.shtml
-		overflow: hidden;
-		img {
-			//display: block;
-			// to fix the big image split the page
-			// http://stackoverflow.com/questions/7055393/center-image-using-text-align-center
-			height: unit(round(750/@base-px-2-rem, 1), rem);
-			position: relative;
-			//-webkit- to fix UC borwser transform not work.
-			transform: translateX(-50%) scale(1.1, 1.1);
-			left: 49.9%;
-			zoom: 1.1;
-			//fix the ip6 over device not in the center
-			@media screen and (min-width: 768px) {
-				transform: translateX(-50%) scale(1.2, 1.2);
-				zoom: 1.2;
-			}
-		}
-	}
-	/*大图下的文字*/
-	.make-big-img-p(@big-banner-text-height);
+  .big-banner-imgBox {
+    width: 100%;
+    max-width: @max-width;
+    height: unit(round(750/@base-px-2-rem, 1), rem);
+    position: relative;
+    // to fix the big image split the page
+    // http://www.divcss5.com/wenji/w364.shtml
+    overflow: hidden;
+    img {
+      //display: block;
+      // to fix the big image split the page
+      // http://stackoverflow.com/questions/7055393/center-image-using-text-align-center
+      height: unit(round(750/@base-px-2-rem, 1), rem);
+      position: relative;
+      //-webkit- to fix UC borwser transform not work.
+      transform: translateX(-50%) scale(1.1, 1.1);
+      left: 49.9%;
+      zoom: 1.1;
+      //fix the ip6 over device not in the center
+      @media screen and (min-width: 768px) {
+        transform: translateX(-50%) scale(1.2, 1.2);
+        zoom: 1.2;
+      }
+    }
+  }
+  /*大图下的文字*/
+  .make-big-img-p(@big-banner-text-height);
 }
 
 /************************
@@ -163,38 +173,38 @@ main-wrapper
 ************************/
 
 div.series-product-imgBox {
-	width: 100%;
-	max-width: @max-width;
-	height: unit(round(750/@base-px-2-rem, 1), rem);
-	position: relative;
-	overflow: hidden;
-	img {
-		height: unit(round(750/@base-px-2-rem, 1), rem);
-		position: relative;
-		transform: translateX(-50%) scale(1, 1);
-		zoom: 1.1;
-		left: 49.9%;
-		@media screen and (min-width: 768px) {
-			transform: translateX(-50%) scale(1.2, 1.2);
-			zoom: 1.2;
-		}
-	}
-	//大图下的正三角
-	&:after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 46.999%;
-		border-left: unit(round(40/@base-px-2-rem, 1), rem) solid transparent;
-		border-right: unit(round(40/@base-px-2-rem, 1), rem) solid transparent;
-		border-bottom: unit(round(40/@base-px-2-rem, 1), rem) solid #fff;
-	}
-	//隐藏正三角
-	&.no-after {
-		&:after {
-			display: none;
-		}
-	}
+  width: 100%;
+  max-width: @max-width;
+  height: unit(round(750/@base-px-2-rem, 1), rem);
+  position: relative;
+  overflow: hidden;
+  img {
+    height: unit(round(750/@base-px-2-rem, 1), rem);
+    position: relative;
+    transform: translateX(-50%) scale(1, 1);
+    zoom: 1.1;
+    left: 49.9%;
+    @media screen and (min-width: 768px) {
+      transform: translateX(-50%) scale(1.2, 1.2);
+      zoom: 1.2;
+    }
+  }
+  //大图下的正三角
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 46.999%;
+    border-left: unit(round(40/@base-px-2-rem, 1), rem) solid transparent;
+    border-right: unit(round(40/@base-px-2-rem, 1), rem) solid transparent;
+    border-bottom: unit(round(40/@base-px-2-rem, 1), rem) solid #fff;
+  }
+  //隐藏正三角
+  &.no-after {
+    &:after {
+      display: none;
+    }
+  }
 }
 
 /************************
@@ -204,48 +214,46 @@ div.series-product-imgBox {
 ************************/
 
 div.swiper-product {
-	.swiper-slide {
-		text-align: center;
-		img {
-			height: unit(round(360/@base-px-2-rem, 1), rem);
-		}
-		p {
-			text-overflow: ellipsis;
-			line-height: 1.4em;
-			height: 2.8em;
-			overflow: hidden;
-			@media screen and (min-width: 768px) {
-				font-size: 20px;
-				letter-spacing: 2px;
-			}
-			& + p {
-				color: red;
-				font-weight: 600;
-			}
-		}
-	}
-	.swiper-slide {
-		//last swipwer more……
-		&:last-child {
-			//to fix UC borwser margin-top not work.
-			.clearfix();
-			//查看更多
-			p {
-				font-size: 15px;
-				margin: unit(round(100/@base-px-2-rem, 2), rem) unit(round(45/@base-px-2-rem, 2), rem) unit(round(45/@base-px-2-rem, 2), rem);
-				border: 1px solid #999;
-				@media screen and (min-width: 768px) {
-					font-size: 20px;
-					letter-spacing: 2px;
-					font-weight: 500;
-				}
-				.make-line-and-height-p(250);
-			}
-		}
-	}
+  .swiper-slide {
+    text-align: center;
+    img {
+      height: unit(round(360/@base-px-2-rem, 1), rem);
+    }
+    p {
+      text-overflow: ellipsis;
+      line-height: 1.4em;
+      height: 2.8em;
+      overflow: hidden;
+      @media screen and (min-width: 768px) {
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+      & + p {
+        color: red;
+        font-weight: 600;
+      }
+    }
+  }
+  .swiper-slide {
+    //last swipwer more……
+    &:last-child {
+      //to fix UC borwser margin-top not work.
+      .clearfix();
+      //查看更多
+      p {
+        font-size: 15px;
+        margin: unit(round(100/@base-px-2-rem, 2), rem) unit(round(45/@base-px-2-rem, 2), rem) unit(round(45/@base-px-2-rem, 2), rem);
+        border: 1px solid #999;
+        @media screen and (min-width: 768px) {
+          font-size: 20px;
+          letter-spacing: 2px;
+          font-weight: 500;
+        }
+        .make-line-and-height-p(250);
+      }
+    }
+  }
 }
-
-
 
 /******************
 
@@ -255,49 +263,49 @@ div.swiper-product {
 
 //直接用于任何容器 已具有样式
 p.end-text {
-	color: #999;
-	position: relative;
-	width: 100%;
-	text-align: center;
-	font-size: 15px;
-	background-color: #fff;
-	letter-spacing: 1px;
-	font-weight: 500;
-	.make-line-and-height-p(@big-banner-text-height);
-	.mod-retina-display(20px, 2px);
+  color: #999;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  background-color: #fff;
+  letter-spacing: 1px;
+  font-weight: 500;
+  .make-line-and-height-p(@big-banner-text-height);
+  .mod-retina-display(20px, 2px);
 }
 
 //购物车猜你喜欢 两条线
 .shopcar, .arrival, .wish, .collect {
-	.base-mt-wrapper {
-		.base-title(line);
-		> p.guess-you-like {
-			color: #aaa;
-			font-size: 16px;
-		}
-	}
+  .base-mt-wrapper {
+    .base-title(line);
+    > p.guess-you-like {
+      color: #aaa;
+      font-size: 16px;
+    }
+  }
 }
 
 .product-search-wrapper {
-	display: none;
-	background: #fff;
+  display: none;
+  background: #fff;
 }
 
 //404 页面
 .error-wrapper {
-	background-color: @blue;
-	padding: unit(round(150/@base-px-2-rem,1), rem) 0;
-	height: 100%;
-	color: #fff;
-	img {
-		width: 100%;
-	}
-	p {
-		text-align: center;
-		font-size: 20px;
-		color: @dark-blue;
-		text-shadow: 2px 2px 0 @light-blue;
-	}
+  background-color: @blue;
+  padding: unit(round(150/@base-px-2-rem, 1), rem) 0;
+  height: 100%;
+  color: #fff;
+  img {
+    width: 100%;
+  }
+  p {
+    text-align: center;
+    font-size: 20px;
+    color: @dark-blue;
+    text-shadow: 2px 2px 0 @light-blue;
+  }
 
 }
 
