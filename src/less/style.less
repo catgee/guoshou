@@ -14,6 +14,8 @@
 @import "common.less";
 //@import "groupbuy.less";
 
+@import "layout-guoshou.less";
+
 /************************
 
 Swiper 分页指示器颜色
@@ -27,6 +29,7 @@ Swiper 分页指示器颜色
 /************************
 
 滑动页
+通用容器
 
 ************************/
 
@@ -35,7 +38,7 @@ Swiper 分页指示器颜色
 	position: relative;
 	width: 100%;
 	max-width: @max-width;
-	margin-top: unit(round((@search-bar-height + @nav-bar-height + 2)/@base-px-2-rem, 1), rem);
+	margin-top: unit(round((2)/@base-px-2-rem, 1), rem);
 	padding-bottom: unit(round((@nav-bottom-bar-height ) /@base-px-2-rem, 1), rem);
 	background-color: @wrapper-bg-color;
 	overflow: hidden;

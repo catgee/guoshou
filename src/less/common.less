@@ -91,8 +91,8 @@ button {
 	//defluat 140
 	background-color: #fff;
 	overflow: hidden;
-	border-bottom: 1px solid @border-color-gray-light;
-	padding: unit(20/@base-px-2-rem, rem) unit(40/@base-px-2-rem, rem);
+	//border-bottom: 1px solid @border-color-gray-light;
+	padding: unit(20/@base-px-2-rem, rem) unit(20/@base-px-2-rem, rem);
 }
 
 .base-wrapper {
@@ -106,6 +106,9 @@ button {
 	}
 	&.no-border {
 		border: 0;
+	}
+	&.no-bg {
+		background-color: @border-color-gray-very-light;
 	}
 }
 
