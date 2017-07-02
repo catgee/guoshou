@@ -1,0 +1,161 @@
+@import "value.less";
+@import "func.less";
+@import "base.less";
+@import "circle.less";
+
+.padding-box {
+  .padding-box()
+}
+
+.padding-box() {
+  background-color: #fff;
+  padding: unit(20/@base-px-2-rem, rem);
+  margin-bottom: unit(20/@base-px-2-rem, rem);
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.box-col {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ad-imgBox {
+  width: 100%;
+  max-width: @max-width;
+  height: unit(round(200/@base-px-2-rem, 1), rem);
+  position: relative;
+  // to fix the big image split the page
+  // http://www.divcss5.com/wenji/w364.shtml
+  overflow: hidden;
+  img {
+    //display: block;
+    // to fix the big image split the page
+    // http://stackoverflow.com/questions/7055393/center-image-using-text-align-center
+    height: unit(round(200/@base-px-2-rem, 1), rem);
+    position: relative;
+    //-webkit- to fix UC borwser transform not work.
+    transform: translateX(-50%) scale(1.1, 1.1);
+    left: 49.9%;
+    zoom: 1.1;
+    //fix the ip6 over device not in the center
+    @media screen and (min-width: 768px) {
+      transform: translateX(-50%) scale(1.2, 1.2);
+      zoom: 1.2;
+    }
+  }
+}
+
+//列表信息
+.list-panel {
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-left: unit(40/@base-px-2-rem, rem);
+  padding-right: unit(40/@base-px-2-rem, rem);
+
+  .list-panel-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: unit(30/@base-px-2-rem, rem) 0;
+
+    border-bottom: 1px solid @border-color-gray-very-light;
+
+    &:first-child {
+      border: 0;
+    }
+    &:last-child {
+      border: 0;
+    }
+    .list-panel-header {
+      & > p {
+        font-size: 14px;
+      }
+      width: 100%;
+
+    }
+    .list-panel-left {
+      & > p {
+        font-size: 14px;
+      }
+      width: 42%;
+
+    }
+    .list-panel-right {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      align-items: center;
+
+      & > p {
+        font-size: 12px;
+        text-align: right;
+        letter-spacing: 1px;
+        color: @border-color-gray;
+      }
+      & i {
+        margin-top: unit(3/@base-px-2-rem, rem);
+      }
+      width: 58%;
+    }
+  }
+
+  .list-panel-right-detail {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    & > p {
+      color: @border-color-gray;
+    }
+    span.price {
+      color: #000;
+      font-size: 20px;
+    }
+  }
+
+  a.call-link {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+
+  }
+}
+
+.s-red {
+  color: @orange-red !important;
+  font-size: 9px;
+  margin: unit(20/@base-px-2-rem, rem) 0;
+}
+
+.l-black {
+  color: #111;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: unit(20/@base-px-2-rem, rem) 0;
+}
+
+p.coupon {
+  &:before {
+    position: relative;
+    display: inline-block;
+    content: '减';
+    font-size: 10px;
+    color: #fff;
+    background-color: rgb(246, 104, 119);
+    border-radius: 2px;
+    padding: unit(5/@base-px-2-rem, rem) unit(10/@base-px-2-rem, rem);
+    margin-right: unit(10/@base-px-2-rem, rem);
+  }
+}
