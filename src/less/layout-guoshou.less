@@ -3,6 +3,7 @@
 @import "base.less";
 @import "circle.less";
 
+@bg-color: #F2F2F2;
 .padding-box {
   .padding-box()
 }
@@ -21,6 +22,13 @@
   flex-flow: column nowrap;
   justify-content: space-around;
   align-items: center;
+}
+
+.box-col-start {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
 }
 
 .ad-imgBox {
@@ -130,6 +138,53 @@
     height: 100%;
 
   }
+  //选项布局
+  &.list-select {
+    //激活状态
+    .active {
+      .list-panel-left > p:first-child {
+        font-size: 14px;
+        color: #000;
+      }
+      .list-panel-left > p:last-child {
+        font-size: 12px;
+        color: @orange-red;
+      }
+    }
+    //默认状态　灰色
+
+    .list-panel-left {
+      & > p {
+        font-size: 14px;
+        color: @coupon-light-gray;
+      }
+      & > p:last-child {
+        font-size: 12px;
+        color: @coupon-light-gray;
+      }
+      width: 70%;
+
+    }
+    .list-panel-right {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+
+      width: 30%;
+
+      & > p {
+        font-size: 12px;
+        text-align: right;
+
+        color: @border-color-gray;
+      }
+      & i {
+        margin-top: unit(3/@base-px-2-rem, rem);
+      }
+    }
+
+  }
 }
 
 .s-red {
@@ -149,13 +204,189 @@
 p.coupon {
   &:before {
     position: relative;
-    display: inline-block;
+    display: inline;
     content: '减';
     font-size: 10px;
     color: #fff;
     background-color: rgb(246, 104, 119);
-    border-radius: 2px;
-    padding: unit(5/@base-px-2-rem, rem) unit(10/@base-px-2-rem, rem);
+    border-radius: 3px;
+    padding: unit(6/@base-px-2-rem, rem) unit(10/@base-px-2-rem, rem);
     margin-right: unit(10/@base-px-2-rem, rem);
+    bottom: unit(5/@base-px-2-rem, rem);
   }
 }
+
+//优惠券
+@coupon-gray: #6a6a6a;
+@coupon-light-gray: #8b8b8b;
+@coupon-red: #ff0025;
+
+.coupon-list {
+
+  &.valid {
+    .coupon-list-detail-deadline {
+      visibility: hidden;
+    }
+
+  }
+  &.expired {
+    > div, p {
+      color: @coupon-light-gray !important;
+    }
+    .coupon-list-detail-deadline {
+      border-color: @coupon-light-gray !important;
+    }
+
+  }
+
+  position: relative;
+  box-shadow: 0 0 0 3px #eeeeee;
+
+  padding: unit(round(30/@base-px-2-rem, 3), rem) unit(round(60/@base-px-2-rem, 3), rem);
+
+  .coupon-list-detail {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+
+    width: 100%;
+    padding-bottom: unit(round(30/@base-px-2-rem, 3), rem);
+    border-bottom: unit(round(5/@base-px-2-rem, 3), rem) dashed @bg-color;
+
+    &:before, &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      background-color: @bg-color;
+      width: unit(round(50/@base-px-2-rem, 3), rem);
+      height: unit(round(50/@base-px-2-rem, 3), rem);
+      bottom: unit(round(-25/@base-px-2-rem, 3), rem);
+
+    }
+    &:before {
+      left: unit(round(-85/@base-px-2-rem, 3), rem);
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: unit(round(5/@base-px-2-rem, 3), rem);
+        border-bottom: unit(round(5/@base-px-2-rem, 3), rem) dashed @bg-color;
+
+      }
+
+    }
+    &:after {
+      right: unit(round(-85/@base-px-2-rem, 3), rem);
+
+    }
+
+    & .coupon-list-detail-limit {
+
+      text-align: center;
+      & p:first-child {
+        color: @coupon-red;
+        font-size: 18px;
+        font-weight: 600;
+        span {
+          font-size: 24px;
+        }
+      }
+      & p:last-child {
+        color: @coupon-gray;
+        font-size: 10px;
+      }
+    }
+    & .coupon-list-detail-source {
+
+      p {
+        &:first-child {
+          font-size: 13px;
+        }
+        font-size: 10px;
+        font-weight: 600;
+        margin-top: unit(round(30/@base-px-2-rem, 3), rem);
+        line-height: 100%;
+      }
+    }
+
+    & .coupon-list-detail-deadline {
+      border-radius: 50%;
+      width: unit(round(180/@base-px-2-rem, 3), rem);
+      height: unit(round(180/@base-px-2-rem, 3), rem);
+      border: unit(round(3/@base-px-2-rem, 3), rem) solid @coupon-red;
+      p {
+        line-height: unit(round(180/@base-px-2-rem, 3), rem);
+        text-align: center;
+        color: @coupon-red;
+        font-size: 12px;
+      }
+
+    }
+
+  }
+  .coupon-list-limit {
+    padding: unit(round(30/@base-px-2-rem, 3), rem) unit(round(25/@base-px-2-rem, 3), rem) 0;
+
+    p {
+      font-size: 10px;
+      color: @coupon-light-gray;
+    }
+
+  }
+
+}
+
+//确认订单页面
+
+.order-detail-address {
+  > p {
+    text-align: center;
+    margin: unit(round(20/@base-px-2-rem, 3), rem) 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+  .order-detail-address-title {
+    font-size: 14px;
+    color: @coupon-light-gray;
+  }
+  .order-detail-add {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+    i {
+
+    }
+  }
+  .order-detail-userinfo {
+    font-size: 14px;
+  }
+
+}
+
+.nav-bottom-bar {
+  &.order-comfirm {
+    background-color: #787878;
+    .order-prices {
+      color: #fff;
+      font-size: 18px;
+      letter-spacing: 1px;
+      padding-left: unit(round(40/@base-px-2-rem, 3), rem);
+
+    }
+
+  }
+
+}
+
+
+
+
+
