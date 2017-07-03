@@ -581,10 +581,10 @@ iframe {
   -webkit-flex-flow: row nowrap;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -593,11 +593,9 @@ iframe {
 }
 .nav-bottom-bar .nav-btn-wrapper > a {
   height: 100%;
-  margin-left: 0.44014085rem;
-  background-color: #e9282e;
+  background-color: #38c871;
   width: 25%;
   padding: 0.35211268rem 0.35211268rem;
-  border-radius: 5px;
   color: #fff;
   font-size: 14px;
 }
@@ -1182,99 +1180,99 @@ i.icon {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   /********************
 
-	首页搜索栏、导航栏icon
+  首页搜索栏、导航栏icon
 
-	********************/
+  ********************/
   /********************
 
-	底部导航栏icon
+  底部导航栏icon
 
-	********************/
+  ********************/
   /********************
 
-	返回顶部icon
+  返回顶部icon
 
-	********************/
+  ********************/
   /********************
 
-	标题栏icon
+  标题栏icon
 
-	********************/
+  ********************/
   /********************
 
-	评论块右指示
+  评论块右指示
 
-	********************/
+  ********************/
   /********************
 
-	商品左下角 收藏 购物车 客服
+  商品左下角 收藏 购物车 客服
 
-	********************/
+  ********************/
   /********************
 
-	购物车 勾选 加 减
+  购物车 勾选 加 减
 
-	********************/
+  ********************/
   /********************
 
-	我的页面  我的收藏 心愿单 到货提醒
+  我的页面  我的收藏 心愿单 到货提醒
 
-	********************/
+  ********************/
   /********************
 
-	我的拼团 全部 拼团成功 拼团中 拼团失败 4个
+  我的拼团 全部 拼团成功 拼团中 拼团失败 4个
 
-	********************/
+  ********************/
   /********************
 
-	我的页面 待付款 待发货 待收货 待评价 4个
+  我的页面 待付款 待发货 待收货 待评价 4个
 
-	********************/
+  ********************/
   /********************
 
-	我的页面  收货地址 我的足迹 优惠券  退货/退款  4个
+  我的页面  收货地址 我的足迹 优惠券  退货/退款  4个
 
-	********************/
+  ********************/
   /********************
 
-	我的页面  客服 个人资料 关于就手 退出登陆 4个
+  我的页面  客服 个人资料 关于就手 退出登陆 4个
 
-	********************/
+  ********************/
   /********************
 
-	QQ 微信
+  QQ 微信
 
-	********************/
+  ********************/
   /********************
 
-	登陆页面 输入框
+  登陆页面 输入框
 
-	********************/
+  ********************/
   /********************
 
-	支付方式 支付宝 通联
+  支付方式 支付宝 通联
 
-	********************/
+  ********************/
   /********************
 
-	订单详情
+  订单详情
 
-	********************/
+  ********************/
   /********************
 
-	发表评价
+  发表评价
 
-	********************/
+  ********************/
   /********************
 
-	五星
+  五星
 
-	********************/
+  ********************/
   /********************
 
-	电话
+  电话
 
-	********************/
+  ********************/
 }
 i.icon.message {
   background-image: url("../img/icon/message@2x.png");
@@ -1345,8 +1343,9 @@ i.icon.share {
 }
 i.icon.right {
   background-image: url("../img/icon/right.png");
-  width: 0.17rem;
-  height: 0.35rem;
+  margin-left: 0.30809859rem;
+  width: 0.2rem;
+  height: 0.39rem;
 }
 i.icon.details-collect {
   background-image: url("../img/icon/details-collect-1.jpg");
@@ -1585,6 +1584,11 @@ i.icon.call {
   background-image: url("../img/icon/call.png");
   width: 0.4rem;
   height: 0.4rem;
+}
+i.icon.select {
+  background-image: url("../img/icon/select.png");
+  width: 0.48rem;
+  height: 0.48rem;
 }
 body {
   background-color: #F2F2F2;
@@ -2980,6 +2984,53 @@ group-goods
           align-items: center;
   height: 100%;
 }
+.list-panel.list-select .active .list-panel-left > p:first-child {
+  font-size: 14px;
+  color: #000;
+}
+.list-panel.list-select .active .list-panel-left > p:last-child {
+  font-size: 12px;
+  color: #f37646;
+}
+.list-panel.list-select .list-panel-left {
+  width: 70%;
+}
+.list-panel.list-select .list-panel-left > p {
+  font-size: 14px;
+  color: #8b8b8b;
+}
+.list-panel.list-select .list-panel-left > p:last-child {
+  font-size: 12px;
+  color: #8b8b8b;
+}
+.list-panel.list-select .list-panel-right {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+}
+.list-panel.list-select .list-panel-right > p {
+  font-size: 12px;
+  text-align: right;
+  color: #989898;
+}
+.list-panel.list-select .list-panel-right i {
+  margin-top: 0.02640845rem;
+}
 .s-red {
   color: #f37646 !important;
   font-size: 9px;
@@ -3109,6 +3160,48 @@ p.coupon:before {
 .coupon-list .coupon-list-limit p {
   font-size: 10px;
   color: #8b8b8b;
+}
+.order-detail-address > p {
+  text-align: center;
+  margin: 0.176rem 0;
+}
+.order-detail-address > p:last-child {
+  margin-bottom: 0;
+}
+.order-detail-address .order-detail-address-title {
+  font-size: 14px;
+  color: #8b8b8b;
+}
+.order-detail-address .order-detail-add {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 15px;
+}
+.order-detail-address .order-detail-userinfo {
+  font-size: 14px;
+}
+.nav-bottom-bar.order-comfirm {
+  background-color: #787878;
+}
+.nav-bottom-bar.order-comfirm .order-prices {
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding-left: 0.352rem;
 }
 /************************
 

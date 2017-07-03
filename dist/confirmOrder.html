@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="renderer" content="webkit">
+    <title>订单详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="Shortcut Icon" href=""/>
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+<div class="wrapper">
+    <!--fixed element-->
+    <div class="base-nav-bar">
+        <a href="">
+            <i class="icon back fl"></i>
+        </a>
+        <p></p>
+        <a class="" href="">
+            <i class="icon fl"></i>
+        </a>
+    </div>
+
+
+    <div class="main-wrapper no-mar-pad orderDetail">
+
+
+        <div class="base-wrapper ">
+            <div class="padding-box box-col">
+                <div class="order-detail-address">
+                    <p class="order-detail-address-title">订单配送至</p>
+                    <p class="order-detail-add">德威大厦云山西路4 603爱展购 <i class="icon right"></i></p>
+                    <p class="order-detail-userinfo">Gray 13790766332</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="base-wrapper no-bg">
+
+            <div class="padding-box box-col list-panel list-select">
+                <div class="list-panel-row ">
+                    <div class="list-panel-header">
+                        <p>选择配送方式</p>
+                    </div>
+                </div>
+                <div class="list-panel-row active">
+                    <div class="list-panel-left">
+                        <p>车手尽快送达 [预计 <span>12:36</span>]</p>
+                        <p>超过<span>10</span>分钟未送达，可获<span>5</span>元红包赔付</p>
+                    </div>
+                    <div class="list-panel-right">
+                        <i class="icon select"></i>
+
+                    </div>
+                </div>
+
+                <div class="list-panel-row ">
+                    <div class="list-panel-left">
+                        <p>上门店自取</p>
+                        <p></p>
+                    </div>
+                    <div class="list-panel-right">
+                        <i class="icon"></i>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="base-wrapper no-bg">
+
+            <div class="padding-box box-col list-panel">
+                <div class="list-panel-row">
+                    <div class="list-panel-header">
+                        <p>果兽江北研究所</p>
+                    </div>
+                </div>
+                <div class="list-panel-row">
+                    <div class="list-panel-left">
+                        <p>森林绿光套餐</p>
+                    </div>
+                    <div class="list-panel-right">
+                        <p>x<span>1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            ￥<span>25</span></p>
+                    </div>
+                </div>
+                <div class="list-panel-row">
+                    <div class="list-panel-left">
+                        <p>森林绿光套餐</p>
+                    </div>
+                    <div class="list-panel-right">
+                        <p>x<span>1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            ￥<span>25</span></p>
+                    </div>
+                </div>
+                <div class="list-panel-row">
+                    <div class="list-panel-left">
+                        <p>森林绿光套餐</p>
+                    </div>
+                    <div class="list-panel-right">
+                        <p>x<span>1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            ￥<span>25</span></p>
+                    </div>
+                </div>
+                <div class="list-panel-row">
+                    <div class="list-panel-left">
+                        <p class="coupon">优惠券抵现立减</p>
+                    </div>
+                    <div class="list-panel-right">
+                        <p class="s-red">-￥<span>12</span></p>
+                    </div>
+                </div>
+
+                <div class="list-panel-row">
+                    <div class="list-panel-left">
+                        <p></p>
+                    </div>
+                    <div class="list-panel-right">
+                        <div class="list-panel-right-detail">
+                            <a class="call-link" href="#"></a>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;小计 <span style="color: #111">￥</span><span
+                                    class="price">46</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--底部导航栏-->
+    <div class="nav-bottom-bar no-padding order-comfirm">
+        <div class="nav-btn-wrapper">
+            <p class="order-prices">￥<span>25.8</span></p>
+
+            <a href="">微支付</a>
+
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+
+<script src="http://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var allList = $(".list-select .list-panel-row");
+        var deliverWay;
+        //console.log(allList);
+        allList.click(function () {
+            $(".list-panel-row.active").each(function (i, e) {
+                $(e).removeClass("active");
+                $(this).find(".list-panel-right i ").removeClass("select");
+            });
+            $(this).addClass("active");
+            $(this).find(".list-panel-right i ").addClass("select");
+        })
+
+    })
+</script>
+
+</html>
