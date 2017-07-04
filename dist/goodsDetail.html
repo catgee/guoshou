@@ -75,12 +75,82 @@
                             <img src="./img/8.png" alt="">
                             <img src="./img/9.png" alt="">
                         </div>
-
-
                     </div>
 
                     <div class="recharge-info my-wallet-money-wrapper" style="display: none">
 
+                        <div class="goods-detail-comment-wrapper ">
+
+                            <div class="goods-detail-comment-left">
+
+                                <div class="goods-detail-comment-one">
+                                    <div class="comment-imgBox">
+                                        <img src="./img/comment1.png" alt="">
+                                    </div>
+                                    <div class="comment-text-header">
+                                        <div class="comment-header">
+                                            <img src="http://via.placeholder.com/50x50/40a0c1/?text=AD" alt="">
+                                        </div>
+                                        <p class="comment-text">
+                                            [耶]白不白的脑残粉都是要尝一尝新品[酷]他们很配[思考]
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="goods-detail-comment-one">
+                                    <div class="comment-imgBox">
+                                        <img src="./img/comment2.png" alt="">
+                                    </div>
+                                    <div class="comment-text-header">
+                                        <div class="comment-header">
+                                            <img src="http://via.placeholder.com/50x50/5201aa/?text=AD" alt="">
+                                        </div>
+                                        <p class="comment-text">
+                                            自我反省！自我反省！自我反省！自我反省！自我反省！自我反省！自我反省！
+                                            自我反省！自我反省！自我反省！
+                                        </p>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+                            <div class="goods-detail-comment-right">
+
+                                <div class="goods-detail-comment-one">
+                                    <div class="comment-imgBox">
+                                        <img src="./img/comment3.png" alt="">
+                                    </div>
+                                    <div class="comment-text-header">
+                                        <div class="comment-header">
+                                            <img src="http://via.placeholder.com/50x50/639752/?text=AD" alt="">
+                                        </div>
+                                        <p class="comment-text">
+                                            前几天受不了没事的诱惑每天都！三顿以上大吃大喝！！！为了工作吧啦吧啦巴拉巴拉
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <div class="goods-detail-comment-one">
+                                    <div class="comment-imgBox">
+                                        <img src="./img/comment4.png" alt="">
+                                    </div>
+                                    <div class="comment-text-header">
+                                        <div class="comment-header">
+                                            <img src="http://via.placeholder.com/50x50/13145a/?text=AD" alt="">
+                                        </div>
+                                        <p class="comment-text">
+                                            仿佛喝下了这十多瓶就可以不回我上周熬的夜……想想也是要奔3了吧啦吧啦巴拉巴拉
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
@@ -97,14 +167,15 @@
     <!--底部导航栏-->
     <div class="nav-bottom-bar no-padding goods-detail">
         <div class="nav-btn-wrapper">
-            <div class="nav-btn-user-header">
-                <img src="http://via.placeholder.com/50x50/dedede/?text=AD" alt="">
+            <!--在这里设置购物车数量 data-shopcount-->
+            <div class="nav-btn-user-header" data-shopcount="3">
+                <img src="./img/user-header.png" alt="">
             </div>
             <div class="order-prices">
                 <p>
                     ￥<span>25.8</span>
                 </p>
-                <p> 优惠券可抵扣 <span>20</span>元</p>
+                <p> 优惠券可抵扣<span>20</span>元</p>
             </div>
             <a href="">去结算</a>
 
@@ -123,7 +194,7 @@
         var deliverWay;
         //console.log(allList);
         allList.click(function () {
-            var className = $(this).attr("class").replace("active", "");
+            var className = $(this).attr("class").replace("active", "").replace("full-bottom", "");
             $(".my-wallet-money-recharge-main > div").hide();
             console.log(".my-wallet-money-recharge-main " + className);
             $(".my-wallet-money-recharge-main ." + className).show();

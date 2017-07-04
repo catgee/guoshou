@@ -3234,22 +3234,68 @@ p.coupon:before {
   margin-left: -2.113rem;
   text-align: left;
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: 1px;
+  line-height: 80%;
 }
 .nav-bottom-bar.goods-detail .nav-btn-wrapper div.order-prices p:last-child {
-  font-size: 10px;
+  font-size: 9px;
+  line-height: 120%;
 }
 .nav-bottom-bar.goods-detail .nav-btn-user-header {
   width: 1.761rem;
   height: 1.761rem;
   margin-left: 0.352rem;
   margin-bottom: 0.44rem;
+  position: relative;
+}
+.nav-bottom-bar.goods-detail .nav-btn-user-header[data-shopcount="0"]::before {
+  display: none;
+}
+.nav-bottom-bar.goods-detail .nav-btn-user-header::before {
+  -webkit-text-size-adjust: none;
+  position: absolute;
+  display: block;
+  content: attr(data-shopcount);
+  font-style: normal;
+  right: -webkit-calc(-5% - 1px);
+  right: calc(-5% - 1px);
+  top: -1px;
+  height: 18px;
+  width: 17px;
+  font-size: 13px;
+  line-height: 1.4;
+  -webkit-transform: scale(0.85);
+      -ms-transform: scale(0.85);
+          transform: scale(0.85);
+  letter-spacing: -1px;
+  vertical-align: top;
+  padding: 0 1px 0 0;
+  color: #fff;
+  background-color: #f2595b;
+  border-radius: 50%;
+}
+@media screen and (min-width: 320px) {
+  .nav-bottom-bar.goods-detail .nav-btn-user-header::before {
+    -webkit-transform: scale(0.85);
+        -ms-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+}
+@media screen and (min-width: 414px) {
+  .nav-bottom-bar.goods-detail .nav-btn-user-header::before {
+    -webkit-transform: scale(0.95);
+        -ms-transform: scale(0.95);
+            transform: scale(0.95);
+    top: 1px;
+  }
 }
 .nav-bottom-bar.goods-detail .nav-btn-user-header img {
+  padding: 0.132rem;
+  background-color: rgba(59, 59, 59, 0.1);
+  width: 100%;
   border: 5px solid rgba(59, 59, 59, 0.5);
   border-radius: 50%;
-  width: 100%;
 }
 .my-wallet-money {
   padding: 0.176rem 0.264rem;
@@ -3522,16 +3568,76 @@ p.coupon:before {
   font-size: 13px;
   padding: 0.088rem 0;
 }
-.goods-imgBox {
+.goods-imgBox,
+.comment-imgBox {
   width: 100%;
   font-size: 0;
 }
-.goods-imgBox img {
+.goods-imgBox img,
+.comment-imgBox img {
   width: 100%;
 }
 .my-wallet-money-recharge-main.no-thing > div {
   padding: 0;
   height: auto;
+}
+.goods-detail-comment-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding: 0.352rem 0.352rem;
+}
+.goods-detail-comment-wrapper > div {
+  width: 50%;
+}
+.goods-detail-comment-wrapper .goods-detail-comment-one {
+  margin-top: 0.176rem;
+}
+.goods-detail-comment-wrapper .goods-detail-comment-left {
+  padding-right: 0.176rem;
+}
+.goods-detail-comment-wrapper .goods-detail-comment-right {
+  padding-left: 0.176rem;
+}
+.goods-detail-comment-wrapper .comment-header {
+  width: 1.32rem;
+  height: 0.88rem;
+  position: relative;
+}
+.goods-detail-comment-wrapper .comment-header img {
+  top: -0.528rem;
+  left: 0.308rem;
+  position: absolute;
+  background-color: rgba(59, 59, 59, 0.1);
+  width: 100%;
+  border: 0.088rem solid #e2dfd9;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 3px #707271;
+          box-shadow: 0 2px 3px #707271;
+}
+.goods-detail-comment-wrapper p.comment-text {
+  color: #7e7e7e;
+  font-size: 11px;
+  line-height: 160%;
+  letter-spacing: 1px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 /************************
 

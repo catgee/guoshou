@@ -399,30 +399,81 @@ p.coupon {
         margin-left: unit(round(-240/@base-px-2-rem, 3), rem);
         text-align: left;
         color: #fff;
-        font-size: 16px;
+        font-size: 18px;
         letter-spacing: 1px;
+        line-height: 80%;
         p:first-child {
-
         }
         p:last-child {
-          font-size: 10px;
+          font-size: 9px;
+          line-height: 120%;
         }
       }
     }
     .nav-btn-user-header {
       width: unit(round(200/@base-px-2-rem, 3), rem);
-      height: unit(round(200/@base-px-2-rem, 3), rem);;
+      height: unit(round(200/@base-px-2-rem, 3), rem);
       margin-left: unit(round(40/@base-px-2-rem, 3), rem);
-      margin-bottom: unit(round(50/@base-px-2-rem, 3), rem);;
+      margin-bottom: unit(round(50/@base-px-2-rem, 3), rem);
+
+      //购物车角标
+      &[data-shopcount="0"] {
+        &::before {
+          display: none;
+        }
+      }
+
+      position: relative;
+      &::before {
+        //购物车商品数量
+        -webkit-text-size-adjust: none;
+        //http://www.jb51.net/article/81984.htm
+        //dataset
+        position: absolute;
+        display: block;
+        content: attr(data-shopcount);
+        font-style: normal;
+
+        //z-index: @z-index-nav-search-bar + 1;
+        right: calc(~"-5% - 1px");
+        top: -1px;
+        height: 18px;
+        //修正字体的右偏移
+        width: 17px;
+        font-size: 13px;
+        line-height: 1.4;
+        transform: scale(0.85);
+        letter-spacing: -1px;
+        vertical-align: top;
+        //修正字体的右偏移
+        padding: 0 1px 0 0;
+
+        color: #fff;
+        background-color: #f2595b;
+        //box-shadow: 0 0 0px 1px rgba(255, 255, 255, 1);
+        border-radius: 50%;
+        //修正ip6 偏移量
+        @media screen and (min-width: 320px) {
+          transform: scale(0.85);
+        }
+        //修正6p 偏移量
+        @media screen and (min-width: 414px) {
+          transform: scale(0.95);
+          top: 1px;
+        }
+
+      }
+
       img {
+        padding: unit(round(15/@base-px-2-rem, 3), rem);
+        background-color: rgba(59, 59, 59, 0.1);
+        width: 100%;
         border: 5px solid rgba(59, 59, 59, 0.5);
         border-radius: 50%;
-        width: 100%;
       }
     }
     border-top: 0;
     background-color: rgba(59, 59, 59, 0.75);
-
 
   }
 
@@ -655,7 +706,7 @@ p.coupon {
 
 }
 
-.goods-imgBox {
+.goods-imgBox, .comment-imgBox {
   width: 100%;
   font-size: 0;
   img {
@@ -672,4 +723,52 @@ p.coupon {
     }
   }
 
+}
+
+//商品评论
+.goods-detail-comment-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  padding: unit(round(40/@base-px-2-rem, 3), rem) unit(round(40/@base-px-2-rem, 3), rem);
+  & > div {
+    width: 50%;
+  }
+  .goods-detail-comment-one {
+    margin-top: unit(round(20/@base-px-2-rem, 3), rem)
+  }
+  .goods-detail-comment-left {
+    padding-right: unit(round(20/@base-px-2-rem, 3), rem)
+  }
+  .goods-detail-comment-right {
+    padding-left: unit(round(20/@base-px-2-rem, 3), rem)
+  }
+  .comment-header {
+    width: unit(round(150/@base-px-2-rem, 3), rem);
+    height: unit(round(100/@base-px-2-rem, 3), rem);
+    position: relative;
+    img {
+      top: unit(round(-60/@base-px-2-rem, 3), rem);
+      left: unit(round(35/@base-px-2-rem, 3), rem);
+      position: absolute;
+      background-color: rgba(59, 59, 59, 0.1);
+      width: 100%;
+      border: unit(round(10/@base-px-2-rem, 3), rem) solid #e2dfd9;
+      border-radius: 50%;
+      box-shadow: 0 2px 3px #707271;
+    }
+  }
+  p.comment-text {
+    color: #7e7e7e;
+    font-size: 11px;
+    line-height: 160%;
+    letter-spacing: 1px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+
+  }
 }
