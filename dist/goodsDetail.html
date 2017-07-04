@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="renderer" content="webkit">
+    <title>订单详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="Shortcut Icon" href=""/>
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<div class="wrapper">
+    <!--fixed element-->
+
+    <div class="main-wrapper no-mart">
+        <div class="base-wrapper no-bg no-thing goods-detail-wrapper ">
+            <div class="goods-imgBox">
+                <img src="./img/goods.png" alt="">
+            </div>
+            <div class="base-wrapper goods-info">
+                <div class=" goods-info-name-num ">
+
+                    <div class="goods-info-name">
+                        <p>
+                            果兽套餐-幽灵公主
+                        </p>
+                        <p>￥<span>25</span></p>
+                    </div>
+
+                    <div class="goods-info-num">
+                        <i class="icon minus"></i>
+                        <span class="text-gray">2</span>
+                        <i class="icon add"></i>
+                    </div>
+                </div>
+
+                <div class="goods-info-model ">
+                    <p>选择：<span>选择规格</span></p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="base-wrapper white-bg  no-thing">
+
+            <div class="my-wallet-money-recharge">
+                <div class="my-wallet-money-recharge-header full-bottom no-border">
+                    <section class="recharge-money  active">
+                        <p>商品详情</p>
+                    </section>
+                    <section class="recharge-info full-bottom">
+                        <p>兽粉评价</p>
+                    </section>
+                </div>
+
+
+                <div class="my-wallet-money-recharge-main no-thing">
+                    <div class="recharge-money my-wallet-money-wrapper ">
+                        <div class="goods-imgBox">
+                            <img src="./img/1.png" alt="">
+                            <img src="./img/2.png" alt="">
+                            <img src="./img/3.png" alt="">
+                            <img src="./img/4.png" alt="">
+                            <img src="./img/5.png" alt="">
+                            <img src="./img/6.png" alt="">
+                            <img src="./img/7.png" alt="">
+                            <img src="./img/8.png" alt="">
+                            <img src="./img/9.png" alt="">
+                        </div>
+
+
+                    </div>
+
+                    <div class="recharge-info my-wallet-money-wrapper" style="display: none">
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!--底部导航栏-->
+    <div class="nav-bottom-bar no-padding goods-detail">
+        <div class="nav-btn-wrapper">
+            <div class="nav-btn-user-header">
+                <img src="http://via.placeholder.com/50x50/dedede/?text=AD" alt="">
+            </div>
+            <div class="order-prices">
+                <p>
+                    ￥<span>25.8</span>
+                </p>
+                <p> 优惠券可抵扣 <span>20</span>元</p>
+            </div>
+            <a href="">微支付</a>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<script src="http://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var allList = $(".my-wallet-money-recharge-header section");
+        var deliverWay;
+        //console.log(allList);
+        allList.click(function () {
+            var className = $(this).attr("class").replace("active", "");
+            $(".my-wallet-money-recharge-main > div").hide();
+            console.log(".my-wallet-money-recharge-main " + className);
+            $(".my-wallet-money-recharge-main ." + className).show();
+
+            $(".my-wallet-money-recharge-header section").each(function (i, e) {
+                $(e).removeClass("active");
+            });
+            $(this).addClass("active");
+        })
+
+    })
+</script>
+</body>
+</html>

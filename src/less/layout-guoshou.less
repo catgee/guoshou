@@ -392,6 +392,40 @@ p.coupon {
 
   }
 
+  &.goods-detail {
+    .nav-btn-wrapper {
+      position: relative;
+      div.order-prices {
+        margin-left: unit(round(-240/@base-px-2-rem, 3), rem);
+        text-align: left;
+        color: #fff;
+        font-size: 16px;
+        letter-spacing: 1px;
+        p:first-child {
+
+        }
+        p:last-child {
+          font-size: 10px;
+        }
+      }
+    }
+    .nav-btn-user-header {
+      width: unit(round(200/@base-px-2-rem, 3), rem);
+      height: unit(round(200/@base-px-2-rem, 3), rem);;
+      margin-left: unit(round(40/@base-px-2-rem, 3), rem);
+      margin-bottom: unit(round(50/@base-px-2-rem, 3), rem);;
+      img {
+        border: 5px solid rgba(59, 59, 59, 0.5);
+        border-radius: 50%;
+        width: 100%;
+      }
+    }
+    border-top: 0;
+    background-color: rgba(59, 59, 59, 0.75);
+
+
+  }
+
 }
 
 //我的钱包
@@ -442,10 +476,43 @@ p.coupon {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #e6e6e6;
+
+  &.no-border {
+    section {
+      border-right: 0;
+    }
+    border-bottom: 0;
+
+  }
+
+  &.full-bottom {
+    section {
+      &.active {
+        color: #000;
+        &:before {
+          display: block;
+          content: '';
+          position: absolute;
+          height: unit(round(8/@base-px-2-rem, 3), rem);
+          width: 100%;
+          background-color: #111111;
+          left: 0;
+          bottom: unit(round(-40/@base-px-2-rem, 3), rem);
+        }
+      }
+    }
+
+  }
+
   .recharge-money, .recharge-info {
     margin: unit(round(40/@base-px-2-rem, 3), rem) 0;
     padding: 0 unit(round(45/@base-px-2-rem, 3), rem);
     border-right: 1px solid #e6e6e6;
+
+    &:last-child {
+      border-right: 0;
+    }
+
     width: 50%;
     text-align: center;
     position: relative;
@@ -463,6 +530,7 @@ p.coupon {
         bottom: unit(round(-42/@base-px-2-rem, 3), rem);
       }
     }
+
   }
 }
 
@@ -502,7 +570,7 @@ p.coupon {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    padding: unit(round(35/@base-px-2-rem, 3), rem) ;
+    padding: unit(round(35/@base-px-2-rem, 3), rem);
     border-bottom: 1px solid @border-color-gray-very-light;
     text-align: center;
     &:last-child {
@@ -533,6 +601,75 @@ p.coupon {
       color: #595959;
     }
 
+  }
+
+}
+
+//商品详情
+.goods-detail-wrapper {
+  margin-bottom: unit(round(40/@base-px-2-rem, 3), rem);
+  .goods-info {
+    padding: unit(round(20/@base-px-2-rem, 3), rem) unit(round(40/@base-px-2-rem, 3), rem);
+    > div {
+      width: 100%;
+      padding: unit(round(20/@base-px-2-rem, 3), rem) 0;
+    }
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .goods-info-name-num {
+    .goods-info-name {
+      p {
+        font-size: 14px;
+        padding-bottom: unit(round(10/@base-px-2-rem, 3), rem);
+      }
+
+    }
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: unit(round(3/@base-px-2-rem, 3), rem) solid @border-color-gray-very-light;
+
+  }
+
+  .goods-info-num {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    i {
+      margin: 0 unit(round(30/@base-px-2-rem, 3), rem);
+    }
+  }
+  .goods-info-model {
+    p {
+      font-size: 13px;
+      padding: unit(round(10/@base-px-2-rem, 3), rem) 0;
+    }
+
+  }
+
+}
+
+.goods-imgBox {
+  width: 100%;
+  font-size: 0;
+  img {
+    width: 100%;
+  }
+
+}
+
+.my-wallet-money-recharge-main {
+  &.no-thing {
+    > div {
+      padding: 0;
+      height: auto;
+    }
   }
 
 }
