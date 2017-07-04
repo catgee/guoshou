@@ -108,9 +108,28 @@ button {
 	&.no-border {
 		border: 0;
 	}
+	&.white-bg {
+		background-color: #fff;
+	}
 	&.no-bg {
 		background-color: @bg-color;
+
+
+		&.my-wallet-money {
+			background-color: transparent;
+			background-image: url("/img/wallet-bg.png");
+			background-position: left;
+			background-origin: padding-box;
+			background-repeat: repeat-y;
+			background-size: cover;
+			padding: unit(40/@base-px-2-rem, rem);
+			> .padding-box {
+				background-color: #000000;
+			}
+
+		}
 	}
+
 }
 
 //左右内边距

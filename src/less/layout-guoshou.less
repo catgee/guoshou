@@ -201,6 +201,14 @@
   margin: unit(20/@base-px-2-rem, rem) 0;
 }
 
+.text-gray {
+  color: @coupon-light-gray;
+}
+
+.text-red {
+  color: @orange-red;
+}
+
 p.coupon {
   &:before {
     position: relative;
@@ -386,7 +394,145 @@ p.coupon {
 
 }
 
+//我的钱包
 
+.my-wallet-money {
+  padding: unit(round(20/@base-px-2-rem, 3), rem) unit(round(30/@base-px-2-rem, 3), rem);
+  //background-image: url("/img/wallet-bg.png");
+  //background-clip: content-box;
+  //background-position: left;
+  //background-origin: content-box;
+  //background-repeat: repeat-y;
+  //background-size: cover;
 
+  color: #fff;
+  p {
+    margin: unit(round(20/@base-px-2-rem, 3), rem) 0;
+  }
+  .my-wallet-money-title {
+    font-size: 12px;
+  }
+  .my-wallet-money-num {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 
+    span {
+      font-size: 34px;
+    }
+    a {
+      color: #fff;
+      padding: unit(round(15/@base-px-2-rem, 3), rem) unit(round(45/@base-px-2-rem, 3), rem);
+      border-radius: 5px;
+      border: 1px solid #fff;
 
+    }
+  }
+  .my-wallet-money-info {
+    font-size: 9px;
+  }
+
+}
+
+.my-wallet-money-recharge-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+  .recharge-money, .recharge-info {
+    margin: unit(round(40/@base-px-2-rem, 3), rem) 0;
+    padding: 0 unit(round(45/@base-px-2-rem, 3), rem);
+    border-right: 1px solid #e6e6e6;
+    width: 50%;
+    text-align: center;
+    position: relative;
+    color: @coupon-light-gray;
+    &.active {
+      color: #000;
+      &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        height: unit(round(10/@base-px-2-rem, 3), rem);
+        width: 46%;
+        background-color: #111111;
+        left: 27%;
+        bottom: unit(round(-42/@base-px-2-rem, 3), rem);
+      }
+    }
+  }
+}
+
+.my-wallet-money-wrapper {
+  padding: unit(round(40/@base-px-2-rem, 3), rem);
+  height: 63vh;
+
+  .wallet-money-pay {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    .wallet-money-one {
+      width: 30%;
+      padding: unit(round(20/@base-px-2-rem, 3), rem) unit(round(35/@base-px-2-rem, 3), rem);
+      margin-bottom: unit(round(45/@base-px-2-rem, 3), rem);
+      text-align: center;
+      border-radius: unit(round(10/@base-px-2-rem, 3), rem);
+      border: 1px solid #333;
+      p:first-child {
+        font-size: 13px;
+        padding-bottom: unit(round(20/@base-px-2-rem, 3), rem);
+      }
+      p:last-child {
+        font-size: 10px;
+      }
+
+    }
+  }
+
+  .wallet-money-history {
+
+  }
+  .wallet-money-history-one {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: unit(round(35/@base-px-2-rem, 3), rem) ;
+    border-bottom: 1px solid @border-color-gray-very-light;
+    text-align: center;
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    .history-one-date {
+      padding-left: unit(round(40/@base-px-2-rem, 3), rem);
+      p:first-child {
+        font-size: 14px;
+
+      }
+      p:last-child {
+        font-size: 13px;
+      }
+    }
+    .history-one-money {
+      padding-left: unit(round(60/@base-px-2-rem, 3), rem);
+      p {
+
+        font-size: 22px;
+      }
+    }
+
+    .history-one-info {
+      padding-left: unit(round(60/@base-px-2-rem, 3), rem);
+      font-size: 13px;
+      color: #595959;
+    }
+
+  }
+
+}
