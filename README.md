@@ -6,5 +6,5 @@
 - [x] 订单选择配送、支付页面 `confirmOrder`
 - [x] 订单详情 `orderDetail`
 - [x] 福利钱包 `myWallet`
-- [ ] 商品评论
-- [ ] 商品详情
+- [ ] 商品评论 `goodsDetail`
+- [x] 商品详情 `goodsDetail`
