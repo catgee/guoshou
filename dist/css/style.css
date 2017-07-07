@@ -2208,9 +2208,9 @@ group-goods
 ************************/
 .progress-circle {
   margin-top: 0.35rem;
-  width: 2.2rem;
-  height: 2.2rem;
-  background-color: #000000;
+  width: 4.05rem;
+  height: 4.05rem;
+  background-color: #c7cdc1;
   position: relative;
   border-radius: 50%;
 }
@@ -2241,7 +2241,7 @@ group-goods
   position: absolute;
   top: 0.66rem;
   line-height: 0.528rem;
-  width: 2.2rem;
+  width: 4.05rem;
   text-align: center;
   display: block;
   color: #53777A;
@@ -2250,11 +2250,11 @@ group-goods
 .left-half-clipper {
   /* a round circle */
   border-radius: 50%;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 4.05rem;
+  height: 4.05rem;
   position: absolute;
   /* needed for clipping */
-  clip: rect(0, 2.2rem, 2.2rem, 1.1rem);
+  clip: rect(0, 4.05rem, 4.05rem, 1.1rem);
   /* clips the whole left half*/
 }
 /* when p>50, don't clip left half*/
@@ -2267,11 +2267,11 @@ group-goods
   to escape the outer clipping path.*/
   position: absolute;
   /*needed for clipping*/
-  clip: rect(0, 1.1rem, 2.2rem, 0);
-  width: 2.2rem;
-  height: 2.2rem;
+  clip: rect(0, 1.1rem, 4.05rem, 0);
+  width: 4.05rem;
+  height: 4.05rem;
   border-radius: 50%;
-  border: 0.7em solid #c7cdc1;
+  border: 0.7em solid #111;
   /*The border is 0.35 but making it larger removes visual artifacts */
   /*background-color: #4D642D;*/
   /* for debug */
@@ -2283,11 +2283,11 @@ group-goods
   /*Progress bar for the first 50%, filling the whole right half*/
   position: absolute;
   /*needed for clipping*/
-  clip: rect(0, 2.2rem, 2.2rem, 1.10035211rem);
+  clip: rect(0, 4.05rem, 4.05rem, 1.10035211rem);
   background-color: #53777A;
   border-radius: 50%;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 4.05rem;
+  height: 4.05rem;
 }
 .progress-circle:not(.over50) .first50-bar {
   display: none;
@@ -2792,6 +2792,624 @@ group-goods
           transform: rotate(356deg);
 }
 .progress-circle.p100 .value-bar {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+.feedback-circle {
+  margin-top: 0.35rem;
+  width: 4.05rem;
+  height: 4.05rem;
+  background-color: #c7cdc1;
+  position: relative;
+  border-radius: 50%;
+}
+.feedback-circle p:first-child {
+  font-size: 32px;
+  color: #111;
+  line-height: 1.41rem;
+}
+.feedback-circle p:last-child {
+  font-size: 8px;
+  color: #111;
+  line-height: 0.18rem;
+}
+.feedback-circle:after {
+  border: none;
+  position: absolute;
+  top: 0.176rem;
+  left: 0.176rem;
+  text-align: center;
+  display: block;
+  border-radius: 50%;
+  width: 3.7rem;
+  height: 3.7rem;
+  background-color: white;
+  content: " ";
+}
+.feedback-circle:before {
+  content: '';
+  display: block;
+  width: 100%;
+  position: absolute;
+  height: 20%;
+  background-color: #fff;
+  bottom: -1%;
+  z-index: 3;
+}
+.feedback-circle-btn {
+  padding: 0.176rem;
+  content: '';
+  display: block;
+  width: 65%;
+  position: absolute;
+  font-size: 13px;
+  height: 0.88rem;
+  background-color: #111;
+  bottom: 0.352rem;
+  left: 0.704rem;
+  z-index: 4;
+  border-radius: 0.704rem;
+  line-height: 100%;
+}
+/* Text inside the control */
+.feedback-circle .feedback-circle-text {
+  position: absolute;
+  top: 0.66rem;
+  width: 4.05rem;
+  text-align: center;
+  display: block;
+  color: #53777A;
+  z-index: 2;
+}
+.feedback-left-half-clipper {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  /* a round circle */
+  border-radius: 50%;
+  width: 4.05rem;
+  height: 4.05rem;
+  position: absolute;
+  /* needed for clipping */
+  clip: rect(0, 4.05rem, 4.05rem, 1.1rem);
+  /* clips the whole left half*/
+}
+/* when p>50, don't clip left half*/
+.feedback-circle.over50 .feedback-left-half-clipper {
+  clip: rect(auto, auto, auto, auto);
+}
+.feedback-value-bar {
+  /*This is an overlayed square, that is made round with the border radius,
+  then it is cut to display only the left half, then rotated clockwise
+  to escape the outer clipping path.*/
+  position: absolute;
+  /*needed for clipping*/
+  clip: rect(0, 1.849rem, 4.05rem, 0);
+  width: 4.05rem;
+  height: 4.05rem;
+  border-radius: 50%;
+  border: 0.9em solid #111;
+  /*The border is 0.35 but making it larger removes visual artifacts */
+  /*background-color: #4D642D;*/
+  /* for debug */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/* feedback bar filling the whole right half for values above 50% */
+.feedback-circle.over50 .feedback-first50-bar {
+  /*feedback bar for the first 50%, filling the whole right half*/
+  position: absolute;
+  /*needed for clipping*/
+  clip: rect(0, 4.05rem, 4.05rem, 1.10035211rem);
+  background-color: #111;
+  border-radius: 50%;
+  width: 4.05rem;
+  height: 4.05rem;
+}
+.feedback-circle:not(.over50) .feedback-first50-bar {
+  display: none;
+}
+/* feedback bar rotation position */
+.feedback-circle.p0 .feedback-value-bar {
+  display: none;
+}
+.feedback-circle.p1 .feedback-value-bar {
+  -webkit-transform: rotate(4deg);
+      -ms-transform: rotate(4deg);
+          transform: rotate(4deg);
+}
+.feedback-circle.p2 .feedback-value-bar {
+  -webkit-transform: rotate(7deg);
+      -ms-transform: rotate(7deg);
+          transform: rotate(7deg);
+}
+.feedback-circle.p3 .feedback-value-bar {
+  -webkit-transform: rotate(11deg);
+      -ms-transform: rotate(11deg);
+          transform: rotate(11deg);
+}
+.feedback-circle.p4 .feedback-value-bar {
+  -webkit-transform: rotate(14deg);
+      -ms-transform: rotate(14deg);
+          transform: rotate(14deg);
+}
+.feedback-circle.p5 .feedback-value-bar {
+  -webkit-transform: rotate(18deg);
+      -ms-transform: rotate(18deg);
+          transform: rotate(18deg);
+}
+.feedback-circle.p6 .feedback-value-bar {
+  -webkit-transform: rotate(22deg);
+      -ms-transform: rotate(22deg);
+          transform: rotate(22deg);
+}
+.feedback-circle.p7 .feedback-value-bar {
+  -webkit-transform: rotate(25deg);
+      -ms-transform: rotate(25deg);
+          transform: rotate(25deg);
+}
+.feedback-circle.p8 .feedback-value-bar {
+  -webkit-transform: rotate(29deg);
+      -ms-transform: rotate(29deg);
+          transform: rotate(29deg);
+}
+.feedback-circle.p9 .feedback-value-bar {
+  -webkit-transform: rotate(32deg);
+      -ms-transform: rotate(32deg);
+          transform: rotate(32deg);
+}
+.feedback-circle.p10 .feedback-value-bar {
+  -webkit-transform: rotate(36deg);
+      -ms-transform: rotate(36deg);
+          transform: rotate(36deg);
+}
+.feedback-circle.p11 .feedback-value-bar {
+  -webkit-transform: rotate(40deg);
+      -ms-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+.feedback-circle.p12 .feedback-value-bar {
+  -webkit-transform: rotate(43deg);
+      -ms-transform: rotate(43deg);
+          transform: rotate(43deg);
+}
+.feedback-circle.p13 .feedback-value-bar {
+  -webkit-transform: rotate(47deg);
+      -ms-transform: rotate(47deg);
+          transform: rotate(47deg);
+}
+.feedback-circle.p14 .feedback-value-bar {
+  -webkit-transform: rotate(50deg);
+      -ms-transform: rotate(50deg);
+          transform: rotate(50deg);
+}
+.feedback-circle.p15 .feedback-value-bar {
+  -webkit-transform: rotate(54deg);
+      -ms-transform: rotate(54deg);
+          transform: rotate(54deg);
+}
+.feedback-circle.p16 .feedback-value-bar {
+  -webkit-transform: rotate(58deg);
+      -ms-transform: rotate(58deg);
+          transform: rotate(58deg);
+}
+.feedback-circle.p17 .feedback-value-bar {
+  -webkit-transform: rotate(61deg);
+      -ms-transform: rotate(61deg);
+          transform: rotate(61deg);
+}
+.feedback-circle.p18 .feedback-value-bar {
+  -webkit-transform: rotate(65deg);
+      -ms-transform: rotate(65deg);
+          transform: rotate(65deg);
+}
+.feedback-circle.p19 .feedback-value-bar {
+  -webkit-transform: rotate(68deg);
+      -ms-transform: rotate(68deg);
+          transform: rotate(68deg);
+}
+.feedback-circle.p20 .feedback-value-bar {
+  -webkit-transform: rotate(72deg);
+      -ms-transform: rotate(72deg);
+          transform: rotate(72deg);
+}
+.feedback-circle.p21 .feedback-value-bar {
+  -webkit-transform: rotate(76deg);
+      -ms-transform: rotate(76deg);
+          transform: rotate(76deg);
+}
+.feedback-circle.p22 .feedback-value-bar {
+  -webkit-transform: rotate(79deg);
+      -ms-transform: rotate(79deg);
+          transform: rotate(79deg);
+}
+.feedback-circle.p23 .feedback-value-bar {
+  -webkit-transform: rotate(83deg);
+      -ms-transform: rotate(83deg);
+          transform: rotate(83deg);
+}
+.feedback-circle.p24 .feedback-value-bar {
+  -webkit-transform: rotate(86deg);
+      -ms-transform: rotate(86deg);
+          transform: rotate(86deg);
+}
+.feedback-circle.p25 .feedback-value-bar {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.feedback-circle.p26 .feedback-value-bar {
+  -webkit-transform: rotate(94deg);
+      -ms-transform: rotate(94deg);
+          transform: rotate(94deg);
+}
+.feedback-circle.p27 .feedback-value-bar {
+  -webkit-transform: rotate(97deg);
+      -ms-transform: rotate(97deg);
+          transform: rotate(97deg);
+}
+.feedback-circle.p28 .feedback-value-bar {
+  -webkit-transform: rotate(101deg);
+      -ms-transform: rotate(101deg);
+          transform: rotate(101deg);
+}
+.feedback-circle.p29 .feedback-value-bar {
+  -webkit-transform: rotate(104deg);
+      -ms-transform: rotate(104deg);
+          transform: rotate(104deg);
+}
+.feedback-circle.p30 .feedback-value-bar {
+  -webkit-transform: rotate(108deg);
+      -ms-transform: rotate(108deg);
+          transform: rotate(108deg);
+}
+.feedback-circle.p31 .feedback-value-bar {
+  -webkit-transform: rotate(112deg);
+      -ms-transform: rotate(112deg);
+          transform: rotate(112deg);
+}
+.feedback-circle.p32 .feedback-value-bar {
+  -webkit-transform: rotate(115deg);
+      -ms-transform: rotate(115deg);
+          transform: rotate(115deg);
+}
+.feedback-circle.p33 .feedback-value-bar {
+  -webkit-transform: rotate(119deg);
+      -ms-transform: rotate(119deg);
+          transform: rotate(119deg);
+}
+.feedback-circle.p34 .feedback-value-bar {
+  -webkit-transform: rotate(122deg);
+      -ms-transform: rotate(122deg);
+          transform: rotate(122deg);
+}
+.feedback-circle.p35 .feedback-value-bar {
+  -webkit-transform: rotate(126deg);
+      -ms-transform: rotate(126deg);
+          transform: rotate(126deg);
+}
+.feedback-circle.p36 .feedback-value-bar {
+  -webkit-transform: rotate(130deg);
+      -ms-transform: rotate(130deg);
+          transform: rotate(130deg);
+}
+.feedback-circle.p37 .feedback-value-bar {
+  -webkit-transform: rotate(133deg);
+      -ms-transform: rotate(133deg);
+          transform: rotate(133deg);
+}
+.feedback-circle.p38 .feedback-value-bar {
+  -webkit-transform: rotate(137deg);
+      -ms-transform: rotate(137deg);
+          transform: rotate(137deg);
+}
+.feedback-circle.p39 .feedback-value-bar {
+  -webkit-transform: rotate(140deg);
+      -ms-transform: rotate(140deg);
+          transform: rotate(140deg);
+}
+.feedback-circle.p40 .feedback-value-bar {
+  -webkit-transform: rotate(144deg);
+      -ms-transform: rotate(144deg);
+          transform: rotate(144deg);
+}
+.feedback-circle.p41 .feedback-value-bar {
+  -webkit-transform: rotate(148deg);
+      -ms-transform: rotate(148deg);
+          transform: rotate(148deg);
+}
+.feedback-circle.p42 .feedback-value-bar {
+  -webkit-transform: rotate(151deg);
+      -ms-transform: rotate(151deg);
+          transform: rotate(151deg);
+}
+.feedback-circle.p43 .feedback-value-bar {
+  -webkit-transform: rotate(155deg);
+      -ms-transform: rotate(155deg);
+          transform: rotate(155deg);
+}
+.feedback-circle.p44 .feedback-value-bar {
+  -webkit-transform: rotate(158deg);
+      -ms-transform: rotate(158deg);
+          transform: rotate(158deg);
+}
+.feedback-circle.p45 .feedback-value-bar {
+  -webkit-transform: rotate(162deg);
+      -ms-transform: rotate(162deg);
+          transform: rotate(162deg);
+}
+.feedback-circle.p46 .feedback-value-bar {
+  -webkit-transform: rotate(166deg);
+      -ms-transform: rotate(166deg);
+          transform: rotate(166deg);
+}
+.feedback-circle.p47 .feedback-value-bar {
+  -webkit-transform: rotate(169deg);
+      -ms-transform: rotate(169deg);
+          transform: rotate(169deg);
+}
+.feedback-circle.p48 .feedback-value-bar {
+  -webkit-transform: rotate(173deg);
+      -ms-transform: rotate(173deg);
+          transform: rotate(173deg);
+}
+.feedback-circle.p49 .feedback-value-bar {
+  -webkit-transform: rotate(176deg);
+      -ms-transform: rotate(176deg);
+          transform: rotate(176deg);
+}
+.feedback-circle.p50 .feedback-value-bar {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.feedback-circle.p51 .feedback-value-bar {
+  -webkit-transform: rotate(184deg);
+      -ms-transform: rotate(184deg);
+          transform: rotate(184deg);
+}
+.feedback-circle.p52 .feedback-value-bar {
+  -webkit-transform: rotate(187deg);
+      -ms-transform: rotate(187deg);
+          transform: rotate(187deg);
+}
+.feedback-circle.p53 .feedback-value-bar {
+  -webkit-transform: rotate(191deg);
+      -ms-transform: rotate(191deg);
+          transform: rotate(191deg);
+}
+.feedback-circle.p54 .feedback-value-bar {
+  -webkit-transform: rotate(194deg);
+      -ms-transform: rotate(194deg);
+          transform: rotate(194deg);
+}
+.feedback-circle.p55 .feedback-value-bar {
+  -webkit-transform: rotate(198deg);
+      -ms-transform: rotate(198deg);
+          transform: rotate(198deg);
+}
+.feedback-circle.p56 .feedback-value-bar {
+  -webkit-transform: rotate(202deg);
+      -ms-transform: rotate(202deg);
+          transform: rotate(202deg);
+}
+.feedback-circle.p57 .feedback-value-bar {
+  -webkit-transform: rotate(205deg);
+      -ms-transform: rotate(205deg);
+          transform: rotate(205deg);
+}
+.feedback-circle.p58 .feedback-value-bar {
+  -webkit-transform: rotate(209deg);
+      -ms-transform: rotate(209deg);
+          transform: rotate(209deg);
+}
+.feedback-circle.p59 .feedback-value-bar {
+  -webkit-transform: rotate(212deg);
+      -ms-transform: rotate(212deg);
+          transform: rotate(212deg);
+}
+.feedback-circle.p60 .feedback-value-bar {
+  -webkit-transform: rotate(216deg);
+      -ms-transform: rotate(216deg);
+          transform: rotate(216deg);
+}
+.feedback-circle.p61 .feedback-value-bar {
+  -webkit-transform: rotate(220deg);
+      -ms-transform: rotate(220deg);
+          transform: rotate(220deg);
+}
+.feedback-circle.p62 .feedback-value-bar {
+  -webkit-transform: rotate(223deg);
+      -ms-transform: rotate(223deg);
+          transform: rotate(223deg);
+}
+.feedback-circle.p63 .feedback-value-bar {
+  -webkit-transform: rotate(227deg);
+      -ms-transform: rotate(227deg);
+          transform: rotate(227deg);
+}
+.feedback-circle.p64 .feedback-value-bar {
+  -webkit-transform: rotate(230deg);
+      -ms-transform: rotate(230deg);
+          transform: rotate(230deg);
+}
+.feedback-circle.p65 .feedback-value-bar {
+  -webkit-transform: rotate(234deg);
+      -ms-transform: rotate(234deg);
+          transform: rotate(234deg);
+}
+.feedback-circle.p66 .feedback-value-bar {
+  -webkit-transform: rotate(238deg);
+      -ms-transform: rotate(238deg);
+          transform: rotate(238deg);
+}
+.feedback-circle.p67 .feedback-value-bar {
+  -webkit-transform: rotate(241deg);
+      -ms-transform: rotate(241deg);
+          transform: rotate(241deg);
+}
+.feedback-circle.p68 .feedback-value-bar {
+  -webkit-transform: rotate(245deg);
+      -ms-transform: rotate(245deg);
+          transform: rotate(245deg);
+}
+.feedback-circle.p69 .feedback-value-bar {
+  -webkit-transform: rotate(248deg);
+      -ms-transform: rotate(248deg);
+          transform: rotate(248deg);
+}
+.feedback-circle.p70 .feedback-value-bar {
+  -webkit-transform: rotate(252deg);
+      -ms-transform: rotate(252deg);
+          transform: rotate(252deg);
+}
+.feedback-circle.p71 .feedback-value-bar {
+  -webkit-transform: rotate(256deg);
+      -ms-transform: rotate(256deg);
+          transform: rotate(256deg);
+}
+.feedback-circle.p72 .feedback-value-bar {
+  -webkit-transform: rotate(259deg);
+      -ms-transform: rotate(259deg);
+          transform: rotate(259deg);
+}
+.feedback-circle.p73 .feedback-value-bar {
+  -webkit-transform: rotate(263deg);
+      -ms-transform: rotate(263deg);
+          transform: rotate(263deg);
+}
+.feedback-circle.p74 .feedback-value-bar {
+  -webkit-transform: rotate(266deg);
+      -ms-transform: rotate(266deg);
+          transform: rotate(266deg);
+}
+.feedback-circle.p75 .feedback-value-bar {
+  -webkit-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+.feedback-circle.p76 .feedback-value-bar {
+  -webkit-transform: rotate(274deg);
+      -ms-transform: rotate(274deg);
+          transform: rotate(274deg);
+}
+.feedback-circle.p77 .feedback-value-bar {
+  -webkit-transform: rotate(277deg);
+      -ms-transform: rotate(277deg);
+          transform: rotate(277deg);
+}
+.feedback-circle.p78 .feedback-value-bar {
+  -webkit-transform: rotate(281deg);
+      -ms-transform: rotate(281deg);
+          transform: rotate(281deg);
+}
+.feedback-circle.p79 .feedback-value-bar {
+  -webkit-transform: rotate(284deg);
+      -ms-transform: rotate(284deg);
+          transform: rotate(284deg);
+}
+.feedback-circle.p80 .feedback-value-bar {
+  -webkit-transform: rotate(288deg);
+      -ms-transform: rotate(288deg);
+          transform: rotate(288deg);
+}
+.feedback-circle.p81 .feedback-value-bar {
+  -webkit-transform: rotate(292deg);
+      -ms-transform: rotate(292deg);
+          transform: rotate(292deg);
+}
+.feedback-circle.p82 .feedback-value-bar {
+  -webkit-transform: rotate(295deg);
+      -ms-transform: rotate(295deg);
+          transform: rotate(295deg);
+}
+.feedback-circle.p83 .feedback-value-bar {
+  -webkit-transform: rotate(299deg);
+      -ms-transform: rotate(299deg);
+          transform: rotate(299deg);
+}
+.feedback-circle.p84 .feedback-value-bar {
+  -webkit-transform: rotate(302deg);
+      -ms-transform: rotate(302deg);
+          transform: rotate(302deg);
+}
+.feedback-circle.p85 .feedback-value-bar {
+  -webkit-transform: rotate(306deg);
+      -ms-transform: rotate(306deg);
+          transform: rotate(306deg);
+}
+.feedback-circle.p86 .feedback-value-bar {
+  -webkit-transform: rotate(310deg);
+      -ms-transform: rotate(310deg);
+          transform: rotate(310deg);
+}
+.feedback-circle.p87 .feedback-value-bar {
+  -webkit-transform: rotate(313deg);
+      -ms-transform: rotate(313deg);
+          transform: rotate(313deg);
+}
+.feedback-circle.p88 .feedback-value-bar {
+  -webkit-transform: rotate(317deg);
+      -ms-transform: rotate(317deg);
+          transform: rotate(317deg);
+}
+.feedback-circle.p89 .feedback-value-bar {
+  -webkit-transform: rotate(320deg);
+      -ms-transform: rotate(320deg);
+          transform: rotate(320deg);
+}
+.feedback-circle.p90 .feedback-value-bar {
+  -webkit-transform: rotate(324deg);
+      -ms-transform: rotate(324deg);
+          transform: rotate(324deg);
+}
+.feedback-circle.p91 .feedback-value-bar {
+  -webkit-transform: rotate(328deg);
+      -ms-transform: rotate(328deg);
+          transform: rotate(328deg);
+}
+.feedback-circle.p92 .feedback-value-bar {
+  -webkit-transform: rotate(331deg);
+      -ms-transform: rotate(331deg);
+          transform: rotate(331deg);
+}
+.feedback-circle.p93 .feedback-value-bar {
+  -webkit-transform: rotate(335deg);
+      -ms-transform: rotate(335deg);
+          transform: rotate(335deg);
+}
+.feedback-circle.p94 .feedback-value-bar {
+  -webkit-transform: rotate(338deg);
+      -ms-transform: rotate(338deg);
+          transform: rotate(338deg);
+}
+.feedback-circle.p95 .feedback-value-bar {
+  -webkit-transform: rotate(342deg);
+      -ms-transform: rotate(342deg);
+          transform: rotate(342deg);
+}
+.feedback-circle.p96 .feedback-value-bar {
+  -webkit-transform: rotate(346deg);
+      -ms-transform: rotate(346deg);
+          transform: rotate(346deg);
+}
+.feedback-circle.p97 .feedback-value-bar {
+  -webkit-transform: rotate(349deg);
+      -ms-transform: rotate(349deg);
+          transform: rotate(349deg);
+}
+.feedback-circle.p98 .feedback-value-bar {
+  -webkit-transform: rotate(353deg);
+      -ms-transform: rotate(353deg);
+          transform: rotate(353deg);
+}
+.feedback-circle.p99 .feedback-value-bar {
+  -webkit-transform: rotate(356deg);
+      -ms-transform: rotate(356deg);
+          transform: rotate(356deg);
+}
+.feedback-circle.p100 .feedback-value-bar {
   -webkit-transform: rotate(360deg);
       -ms-transform: rotate(360deg);
           transform: rotate(360deg);
@@ -3638,6 +4256,53 @@ p.coupon:before {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+}
+.my-feedback {
+  background-size: 100%;
+  background-position: left top;
+  padding-top: 2.641rem;
+  background-repeat: no-repeat;
+}
+.my-feedback-main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.my-feedback-main .feedback-money {
+  padding-left: 0.528rem;
+  margin-top: 0.352rem;
+}
+.my-feedback-main .feedback-money p:first-child {
+  color: #595959;
+  font-size: 16px;
+}
+.my-feedback-main .feedback-money p:last-child {
+  font-size: 32px;
+  padding-top: 0.176rem;
+}
+.my-feedback > .padding-box {
+  border-radius: 0.132rem;
+}
+.my-feedback-text {
+  margin-top: 0.176rem;
+}
+.feedback-circle-wrapper {
+  margin-top: 0.528rem;
+  margin-right: 0.528rem;
 }
 /************************
 

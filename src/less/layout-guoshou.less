@@ -2,6 +2,7 @@
 @import "func.less";
 @import "base.less";
 @import "circle.less";
+@import "feedback-circle.less";
 
 @bg-color: #F2F2F2;
 .padding-box {
@@ -771,4 +772,53 @@ p.coupon {
     overflow: hidden;
 
   }
+}
+
+//奖励页面
+.my-feedback {
+  background-size: 100%;
+  background-position: left top;
+  padding-top: unit(round(300/@base-px-2-rem, 3), rem);
+  background-repeat: no-repeat;
+
+}
+
+.my-feedback-main {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  // padding: unit(round(20/@base-px-2-rem, 3), rem) unit(round(60/@base-px-2-rem, 3), rem);
+
+  .feedback-money {
+    padding-left: unit(round(60/@base-px-2-rem, 3), rem);
+    margin-top: unit(round(40/@base-px-2-rem, 3), rem);
+
+    p:first-child {
+      color: #595959;
+      font-size: 16px;
+    }
+    p:last-child {
+      font-size: 32px;
+      padding-top: unit(round(20/@base-px-2-rem, 3), rem);
+    }
+  }
+}
+
+.my-feedback > .padding-box {
+  border-radius: unit(round(15/@base-px-2-rem, 3), rem);
+}
+
+.my-feedback-text {
+  margin-top: unit(round(20/@base-px-2-rem, 3), rem);
+}
+
+.my-feedback-view {
+
+}
+
+.feedback-circle-wrapper {
+  margin-top: unit(round(60/@base-px-2-rem, 3), rem);
+  margin-right: unit(round(60/@base-px-2-rem, 3), rem);
+
 }
