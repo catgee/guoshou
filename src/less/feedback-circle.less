@@ -1,0 +1,540 @@
+@circle-width: unit(round(460/@base-px-2-rem, 2), rem);
+@circle-in-width: unit(round(420/@base-px-2-rem, 2), rem);
+@circle-color: #111;
+@circle-color-bg: rgb(199, 205, 193);
+//订单详情页
+//倒计时环形
+
+.feedback-circle {
+  margin-top: unit(round(40/@base-px-2-rem, 2), rem);
+  width: @circle-width;
+  height: @circle-width;
+  background-color: @circle-color-bg;
+  position: relative;
+
+  //border: 3px solid #111111;
+  border-radius: 50%;
+  & p {
+    &:first-child {
+      font-size: 32px;
+      color: #111;
+      line-height: unit(round(160/@base-px-2-rem, 2), rem);
+    }
+
+    &:last-child {
+      font-size: 8px;
+      color: #111;
+
+
+      line-height: unit(round(20/@base-px-2-rem, 2), rem);
+    }
+  }
+
+}
+
+.feedback-circle:after {
+  border: none;
+  position: absolute;
+  top: unit(round(20/@base-px-2-rem, 3), rem);
+  left: unit(round(20/@base-px-2-rem, 3), rem);
+  text-align: center;
+  display: block;
+  border-radius: 50%;
+  width: @circle-in-width;
+  height: @circle-in-width;
+  background-color: white;
+  content: " ";
+}
+
+.feedback-circle:before{
+  content: '';
+  display: block;
+  width: 100%;
+  position: absolute;
+  height: 20%;
+  background-color: #fff;
+  bottom: -1%;
+  z-index: 3;
+}
+
+.feedback-circle-btn {
+  padding: unit(round(20/@base-px-2-rem, 3), rem);;
+  content: '';
+  display: block;
+  width: 65%;
+  position: absolute;
+  font-size: 13px;
+  height: unit(round(100/@base-px-2-rem, 3), rem);
+  background-color: #111;
+  bottom: unit(round(40/@base-px-2-rem, 3), rem);;
+  left: unit(round(80/@base-px-2-rem, 3), rem);;
+  z-index: 4;
+  border-radius: unit(round(80/@base-px-2-rem, 3), rem);
+  line-height: 100%;
+
+}
+
+/* Text inside the control */
+.feedback-circle .feedback-circle-text {
+  position: absolute;
+  top: unit(round(75/@base-px-2-rem, 3), rem);
+  //line-height: unit(round(100/@base-px-2-rem, 3), rem);
+  width: @circle-width;
+  text-align: center;
+  display: block;
+  color: #53777A;
+  z-index: 2;
+}
+
+.feedback-left-half-clipper {
+  //反转
+  transform: rotate(180deg);
+  /* a round circle */
+  border-radius: 50%;
+  width: @circle-width;
+  height: @circle-width;
+  position: absolute; /* needed for clipping */
+  clip: rect(0, @circle-width, @circle-width, unit(round(125/@base-px-2-rem, 3), rem)); /* clips the whole left half*/
+}
+
+/* when p>50, don't clip left half*/
+.feedback-circle.over50 .feedback-left-half-clipper {
+  clip: rect(auto, auto, auto, auto);
+}
+
+.feedback-value-bar {
+  /*This is an overlayed square, that is made round with the border radius,
+  then it is cut to display only the left half, then rotated clockwise
+  to escape the outer clipping path.*/
+  position: absolute; /*needed for clipping*/
+  clip: rect(0, unit(round(210/@base-px-2-rem, 3), rem), @circle-width, 0);
+  width: @circle-width;
+  height: @circle-width;
+  border-radius: 50%;
+  border: 0.9em solid @circle-color; /*The border is 0.35 but making it larger removes visual artifacts */
+  /*background-color: #4D642D;*/ /* for debug */
+  box-sizing: border-box;
+
+}
+
+/* feedback bar filling the whole right half for values above 50% */
+.feedback-circle.over50 .feedback-first50-bar {
+  /*feedback bar for the first 50%, filling the whole right half*/
+  position: absolute; /*needed for clipping*/
+  clip: rect(0, @circle-width, @circle-width, unit(125/@base-px-2-rem, rem));
+  background-color: @circle-color;
+  border-radius: 50%;
+  width: @circle-width;
+  height: @circle-width;
+}
+
+.feedback-circle:not(.over50) .feedback-first50-bar {
+  display: none;
+}
+
+/* feedback bar rotation position */
+.feedback-circle.p0 .feedback-value-bar {
+  display: none;
+}
+
+.feedback-circle.p1 .feedback-value-bar {
+  transform: rotate(4deg);
+}
+
+.feedback-circle.p2 .feedback-value-bar {
+  transform: rotate(7deg);
+}
+
+.feedback-circle.p3 .feedback-value-bar {
+  transform: rotate(11deg);
+}
+
+.feedback-circle.p4 .feedback-value-bar {
+  transform: rotate(14deg);
+}
+
+.feedback-circle.p5 .feedback-value-bar {
+  transform: rotate(18deg);
+}
+
+.feedback-circle.p6 .feedback-value-bar {
+  transform: rotate(22deg);
+}
+
+.feedback-circle.p7 .feedback-value-bar {
+  transform: rotate(25deg);
+}
+
+.feedback-circle.p8 .feedback-value-bar {
+  transform: rotate(29deg);
+}
+
+.feedback-circle.p9 .feedback-value-bar {
+  transform: rotate(32deg);
+}
+
+.feedback-circle.p10 .feedback-value-bar {
+  transform: rotate(36deg);
+}
+
+.feedback-circle.p11 .feedback-value-bar {
+  transform: rotate(40deg);
+}
+
+.feedback-circle.p12 .feedback-value-bar {
+  transform: rotate(43deg);
+}
+
+.feedback-circle.p13 .feedback-value-bar {
+  transform: rotate(47deg);
+}
+
+.feedback-circle.p14 .feedback-value-bar {
+  transform: rotate(50deg);
+}
+
+.feedback-circle.p15 .feedback-value-bar {
+  transform: rotate(54deg);
+}
+
+.feedback-circle.p16 .feedback-value-bar {
+  transform: rotate(58deg);
+}
+
+.feedback-circle.p17 .feedback-value-bar {
+  transform: rotate(61deg);
+}
+
+.feedback-circle.p18 .feedback-value-bar {
+  transform: rotate(65deg);
+}
+
+.feedback-circle.p19 .feedback-value-bar {
+  transform: rotate(68deg);
+}
+
+.feedback-circle.p20 .feedback-value-bar {
+  transform: rotate(72deg);
+  //72
+}
+
+.feedback-circle.p21 .feedback-value-bar {
+  transform: rotate(76deg);
+}
+
+.feedback-circle.p22 .feedback-value-bar {
+  transform: rotate(79deg);
+}
+
+.feedback-circle.p23 .feedback-value-bar {
+  transform: rotate(83deg);
+}
+
+.feedback-circle.p24 .feedback-value-bar {
+  transform: rotate(86deg);
+}
+
+.feedback-circle.p25 .feedback-value-bar {
+  transform: rotate(90deg);
+}
+
+.feedback-circle.p26 .feedback-value-bar {
+  transform: rotate(94deg);
+}
+
+.feedback-circle.p27 .feedback-value-bar {
+  transform: rotate(97deg);
+}
+
+.feedback-circle.p28 .feedback-value-bar {
+  transform: rotate(101deg);
+}
+
+.feedback-circle.p29 .feedback-value-bar {
+  transform: rotate(104deg);
+}
+
+.feedback-circle.p30 .feedback-value-bar {
+  transform: rotate(108deg);
+}
+
+.feedback-circle.p31 .feedback-value-bar {
+  transform: rotate(112deg);
+}
+
+.feedback-circle.p32 .feedback-value-bar {
+  transform: rotate(115deg);
+}
+
+.feedback-circle.p33 .feedback-value-bar {
+  transform: rotate(119deg);
+}
+
+.feedback-circle.p34 .feedback-value-bar {
+  transform: rotate(122deg);
+}
+
+.feedback-circle.p35 .feedback-value-bar {
+  transform: rotate(126deg);
+}
+
+.feedback-circle.p36 .feedback-value-bar {
+  transform: rotate(130deg);
+}
+
+.feedback-circle.p37 .feedback-value-bar {
+  transform: rotate(133deg);
+}
+
+.feedback-circle.p38 .feedback-value-bar {
+  transform: rotate(137deg);
+}
+
+.feedback-circle.p39 .feedback-value-bar {
+  transform: rotate(140deg);
+}
+
+.feedback-circle.p40 .feedback-value-bar {
+  transform: rotate(144deg);
+}
+
+.feedback-circle.p41 .feedback-value-bar {
+  transform: rotate(148deg);
+}
+
+.feedback-circle.p42 .feedback-value-bar {
+  transform: rotate(151deg);
+}
+
+.feedback-circle.p43 .feedback-value-bar {
+  transform: rotate(155deg);
+}
+
+.feedback-circle.p44 .feedback-value-bar {
+  transform: rotate(158deg);
+}
+
+.feedback-circle.p45 .feedback-value-bar {
+  transform: rotate(162deg);
+}
+
+.feedback-circle.p46 .feedback-value-bar {
+  transform: rotate(166deg);
+}
+
+.feedback-circle.p47 .feedback-value-bar {
+  transform: rotate(169deg);
+}
+
+.feedback-circle.p48 .feedback-value-bar {
+  transform: rotate(173deg);
+}
+
+.feedback-circle.p49 .feedback-value-bar {
+  transform: rotate(176deg);
+}
+
+.feedback-circle.p50 .feedback-value-bar {
+  transform: rotate(180deg);
+}
+
+.feedback-circle.p51 .feedback-value-bar {
+  transform: rotate(184deg);
+}
+
+.feedback-circle.p52 .feedback-value-bar {
+  transform: rotate(187deg);
+}
+
+.feedback-circle.p53 .feedback-value-bar {
+  transform: rotate(191deg);
+}
+
+.feedback-circle.p54 .feedback-value-bar {
+  transform: rotate(194deg);
+}
+
+.feedback-circle.p55 .feedback-value-bar {
+  transform: rotate(198deg);
+}
+
+.feedback-circle.p56 .feedback-value-bar {
+  transform: rotate(202deg);
+}
+
+.feedback-circle.p57 .feedback-value-bar {
+  transform: rotate(205deg);
+}
+
+.feedback-circle.p58 .feedback-value-bar {
+  transform: rotate(209deg);
+}
+
+.feedback-circle.p59 .feedback-value-bar {
+  transform: rotate(212deg);
+}
+
+.feedback-circle.p60 .feedback-value-bar {
+  transform: rotate(216deg);
+}
+
+.feedback-circle.p61 .feedback-value-bar {
+  transform: rotate(220deg);
+}
+
+.feedback-circle.p62 .feedback-value-bar {
+  transform: rotate(223deg);
+}
+
+.feedback-circle.p63 .feedback-value-bar {
+  transform: rotate(227deg);
+}
+
+.feedback-circle.p64 .feedback-value-bar {
+  transform: rotate(230deg);
+}
+
+.feedback-circle.p65 .feedback-value-bar {
+  transform: rotate(234deg);
+}
+
+.feedback-circle.p66 .feedback-value-bar {
+  transform: rotate(238deg);
+}
+
+.feedback-circle.p67 .feedback-value-bar {
+  transform: rotate(241deg);
+}
+
+.feedback-circle.p68 .feedback-value-bar {
+  transform: rotate(245deg);
+}
+
+.feedback-circle.p69 .feedback-value-bar {
+  transform: rotate(248deg);
+}
+
+.feedback-circle.p70 .feedback-value-bar {
+  transform: rotate(252deg);
+}
+
+.feedback-circle.p71 .feedback-value-bar {
+  transform: rotate(256deg);
+}
+
+.feedback-circle.p72 .feedback-value-bar {
+  transform: rotate(259deg);
+}
+
+.feedback-circle.p73 .feedback-value-bar {
+  transform: rotate(263deg);
+}
+
+.feedback-circle.p74 .feedback-value-bar {
+  transform: rotate(266deg);
+}
+
+.feedback-circle.p75 .feedback-value-bar {
+  transform: rotate(270deg);
+}
+
+.feedback-circle.p76 .feedback-value-bar {
+  transform: rotate(274deg);
+}
+
+.feedback-circle.p77 .feedback-value-bar {
+  transform: rotate(277deg);
+}
+
+.feedback-circle.p78 .feedback-value-bar {
+  transform: rotate(281deg);
+}
+
+.feedback-circle.p79 .feedback-value-bar {
+  transform: rotate(284deg);
+}
+
+.feedback-circle.p80 .feedback-value-bar {
+  transform: rotate(288deg);
+}
+
+.feedback-circle.p81 .feedback-value-bar {
+  transform: rotate(292deg);
+}
+
+.feedback-circle.p82 .feedback-value-bar {
+  transform: rotate(295deg);
+}
+
+.feedback-circle.p83 .feedback-value-bar {
+  transform: rotate(299deg);
+}
+
+.feedback-circle.p84 .feedback-value-bar {
+  transform: rotate(302deg);
+}
+
+.feedback-circle.p85 .feedback-value-bar {
+  transform: rotate(306deg);
+}
+
+.feedback-circle.p86 .feedback-value-bar {
+  transform: rotate(310deg);
+}
+
+.feedback-circle.p87 .feedback-value-bar {
+  transform: rotate(313deg);
+}
+
+.feedback-circle.p88 .feedback-value-bar {
+  transform: rotate(317deg);
+}
+
+.feedback-circle.p89 .feedback-value-bar {
+  transform: rotate(320deg);
+}
+
+.feedback-circle.p90 .feedback-value-bar {
+  transform: rotate(324deg);
+}
+
+.feedback-circle.p91 .feedback-value-bar {
+  transform: rotate(328deg);
+}
+
+.feedback-circle.p92 .feedback-value-bar {
+  transform: rotate(331deg);
+}
+
+.feedback-circle.p93 .feedback-value-bar {
+  transform: rotate(335deg);
+}
+
+.feedback-circle.p94 .feedback-value-bar {
+  transform: rotate(338deg);
+}
+
+.feedback-circle.p95 .feedback-value-bar {
+  transform: rotate(342deg);
+}
+
+.feedback-circle.p96 .feedback-value-bar {
+  transform: rotate(346deg);
+}
+
+.feedback-circle.p97 .feedback-value-bar {
+  transform: rotate(349deg);
+}
+
+.feedback-circle.p98 .feedback-value-bar {
+  transform: rotate(353deg);
+}
+
+.feedback-circle.p99 .feedback-value-bar {
+  transform: rotate(356deg);
+}
+
+.feedback-circle.p100 .feedback-value-bar {
+  transform: rotate(360deg);
+}
+

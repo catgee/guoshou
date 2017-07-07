@@ -8,3 +8,4 @@
 - [x] 福利钱包 `myWallet`
 - [x] 商品评论 `goodsDetail`
 - [x] 商品详情 `goodsDetail`
+- [x] 兽粉福利  `feedback`
