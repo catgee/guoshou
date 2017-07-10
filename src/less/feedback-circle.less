@@ -1,15 +1,15 @@
-@circle-width: unit(round(460/@base-px-2-rem, 2), rem);
-@circle-in-width: unit(round(420/@base-px-2-rem, 2), rem);
-@circle-color: #111;
-@circle-color-bg: rgb(199, 205, 193);
+@feedback-circle-width: unit(round(460/@base-px-2-rem, 2), rem);
+@feedback-circle-in-width: unit(round(420/@base-px-2-rem, 2), rem);
+@feedback-circle-color: #111;
+@feedback-circle-color-bg: rgb(199, 205, 193);
 //订单详情页
 //倒计时环形
 
 .feedback-circle {
   margin-top: unit(round(40/@base-px-2-rem, 2), rem);
-  width: @circle-width;
-  height: @circle-width;
-  background-color: @circle-color-bg;
+  width: @feedback-circle-width;
+  height: @feedback-circle-width;
+  background-color: @feedback-circle-color-bg;
   position: relative;
 
   //border: 3px solid #111111;
@@ -40,8 +40,8 @@
   text-align: center;
   display: block;
   border-radius: 50%;
-  width: @circle-in-width;
-  height: @circle-in-width;
+  width: @feedback-circle-in-width;
+  height: @feedback-circle-in-width;
   background-color: white;
   content: " ";
 }
@@ -79,7 +79,7 @@
   position: absolute;
   top: unit(round(75/@base-px-2-rem, 3), rem);
   //line-height: unit(round(100/@base-px-2-rem, 3), rem);
-  width: @circle-width;
+  width: @feedback-circle-width;
   text-align: center;
   display: block;
   color: #53777A;
@@ -91,10 +91,10 @@
   transform: rotate(180deg);
   /* a round circle */
   border-radius: 50%;
-  width: @circle-width;
-  height: @circle-width;
+  width: @feedback-circle-width;
+  height: @feedback-circle-width;
   position: absolute; /* needed for clipping */
-  clip: rect(0, @circle-width, @circle-width, unit(round(125/@base-px-2-rem, 3), rem)); /* clips the whole left half*/
+  clip: rect(0, @feedback-circle-width, @feedback-circle-width, unit(round(125/@base-px-2-rem, 3), rem)); /* clips the whole left half*/
 }
 
 /* when p>50, don't clip left half*/
@@ -107,11 +107,11 @@
   then it is cut to display only the left half, then rotated clockwise
   to escape the outer clipping path.*/
   position: absolute; /*needed for clipping*/
-  clip: rect(0, unit(round(210/@base-px-2-rem, 3), rem), @circle-width, 0);
-  width: @circle-width;
-  height: @circle-width;
+  clip: rect(0, unit(round(210/@base-px-2-rem, 3), rem), @feedback-circle-width, 0);
+  width: @feedback-circle-width;
+  height: @feedback-circle-width;
   border-radius: 50%;
-  border: 0.9em solid @circle-color; /*The border is 0.35 but making it larger removes visual artifacts */
+  border: 0.9em solid @feedback-circle-color; /*The border is 0.35 but making it larger removes visual artifacts */
   /*background-color: #4D642D;*/ /* for debug */
   box-sizing: border-box;
 
@@ -121,11 +121,11 @@
 .feedback-circle.over50 .feedback-first50-bar {
   /*feedback bar for the first 50%, filling the whole right half*/
   position: absolute; /*needed for clipping*/
-  clip: rect(0, @circle-width, @circle-width, unit(125/@base-px-2-rem, rem));
-  background-color: @circle-color;
+  clip: rect(0, @feedback-circle-width, @feedback-circle-width, unit(125/@base-px-2-rem, rem));
+  background-color: @feedback-circle-color;
   border-radius: 50%;
-  width: @circle-width;
-  height: @circle-width;
+  width: @feedback-circle-width;
+  height: @feedback-circle-width;
 }
 
 .feedback-circle:not(.over50) .feedback-first50-bar {
