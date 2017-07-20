@@ -11,10 +11,6 @@ var autoprefix = new LessPluginAutoPrefix({
 });
 
 
-var browser_config = {
-    baseDir: 'dist',
-    watchFiles: ['dist/*.html', 'dist/css/*.css', 'dist/js/*.js', 'dist/js/app/*.js']
-};
 
 gulp.task('compileLess', function () { //改个名字啦
     gulp.src('src/less/style.less')
@@ -48,14 +44,21 @@ gulp.task('copyJS', function () {
         .pipe(gulp.dest('web/Public/js'))
 });
 
+var browser_config = {
+    baseDir: 'dist',
+    watchFiles: ['dist/*.html', 'dist/css/*.css', 'dist/js/*.js', 'dist/js/app/*.js']
+};
+
 
 gulp.task('browser-sync', ['compileLess', 'minify-css'], function () {
     browserSync.init({
         files: browser_config.watchFiles,
-        // server: {
-        //     baseDir: browser_config.baseDir
-        // },
-        proxy: "www.guoshou.com"
+        server: {
+            baseDir: browser_config.baseDir
+        },
+        //proxy: 'www.guoshou.com',
+        host: 'www.guoshou.com',
+        open: 'external'
 
     });
     gulp.watch('src/less/*.less', ['compileLess']);
